@@ -1,0 +1,8 @@
+# Ignorar arquivos específicos
+Findex.html
+manifest.json
+
+# Ignorar pastas
+vendor/
+platforms/
+node_modules/

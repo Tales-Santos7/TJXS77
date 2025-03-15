@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.talesjs.talesjs" version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Tales Santos | Desenvolvedor</name>
+    <description>Portifolio de Tales Santos</description>
+    <author email="tales.js07@gmail.com" href="https://cordova.apache.org">
+        Tales Santos
+    </author>
+
+    <content src="index.html" />
+
+    <!-- Permissões de navegação -->
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
+    <!-- Ícone do App -->
+    <icon src="res/icon-5.png"/>
+    <!-- Configurações da Splash Screen -->
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/icon-5.png"/>
+    <preference name="SplashScreenDelay" value="3000"/>
+    <preference name="FadeSplashScreenDuration" value="500"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <preference name="SplashMaintainAspectRatio" value="true"/>
+    <preference name="SplashShowOnlyFirstTime" value="false"/>
+    <!-- Plugin da Splash Screen -->
+    <plugin name="cordova-plugin-splashscreen" source="npm" />
+
+</widget>
