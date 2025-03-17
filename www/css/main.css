@@ -61,8 +61,12 @@
     background-color: #1a78f3;
 }
 
-.section-footer .widget_social_widget ul li a.twitter {
+.section-footer .widget_social_widget ul li a.whatsapp {
     background-color: #25D366;
+}
+
+.section-footer .widget_social_widget ul li a.github {
+    background-color: #222121;
 }
 
 .section-footer .widget_social_widget ul li a.instagram {
