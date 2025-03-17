@@ -471,10 +471,9 @@ footer i {
 }
 
 .git {
-  background-image: linear-gradient(to right, #ffffff 0%, #ca2e2e 30%, #000000 70%);
-
-  background-size: 200% auto; /* Começa maior para efeito de deslize */
-  transition: background-position 1s ease-in-out; /* Transição suave */
+  background-image: linear-gradient(to right, #ffffff 20%, #a84141 50%, #121212 75%);
+  background-size: 200% auto;
+  transition: background-position 1s ease-in-out; 
 }
 
 .git:hover {
@@ -512,5 +511,16 @@ footer i {
 
 .as:hover {
   background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.canva {
+  background-image: linear-gradient(to right, #ffffff 20%, #0080ff 50%, #8e2de2 90%);
+  background-size: 200% auto;
+  transition: background-position 1s ease-in-out; 
+}
+
+.canva:hover {
+  background-position: right center;
   color: #fff;
 }
