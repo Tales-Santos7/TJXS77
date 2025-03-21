@@ -1,6 +1,4 @@
 # Ignorar arquivos específicos
-Findex.html
-manifest.json
 
 # Ignorar pastas
 vendor/
