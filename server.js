@@ -81,6 +81,6 @@ app.get('/validar-token', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta http://localhost:${PORT}`);
+  console.log(`Servidor rodando na porta https://tales-santos-backend.onrender.com/`);
 });
 
