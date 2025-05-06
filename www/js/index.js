@@ -148,3 +148,28 @@ function apagarTitulo() {
 }
 
 escreverTitulo();
+
+// SEÇÃO DE PERGUNTAS FREQUENTES
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const answer = item.querySelector('.faq-answer');
+
+    if (item.classList.contains('open')) {
+      // FECHAR com animação suave
+      answer.style.maxHeight = answer.scrollHeight + "px"; // Primeiro definimos altura atual
+      setTimeout(() => {
+        answer.style.maxHeight = "0px"; // Depois de 10ms começamos a fechar
+      });
+      
+      // Só removemos a classe 'open' DEPOIS da animação terminar
+      setTimeout(() => {
+        item.classList.remove('open');
+      }); // mesmo tempo do transition no CSS
+    } else {
+      // ABRIR com animação suave
+      item.classList.add('open'); // Primeiro já marcamos como aberto
+      answer.style.maxHeight = answer.scrollHeight + "px"; // E definimos a altura necessária
+    }
+  });
+});

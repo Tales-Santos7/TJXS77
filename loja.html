@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja | Templates</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="/www/css/loja.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+
+<body>
+  <a href="./index.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a>
+  <div class="container">
+    <h2>Loja de Projetos</h2>
+    <div class="categories">
+      <div class="category" data-filter="todos">Todos</div>
+      <div class="category" data-filter="devs">Sou dev</div>
+      <div class="category" data-filter="nao-devs">Não sou dev</div>
+    </div>
+
+    <div class="grid">
+
+      <!-- INICIO CARDS PARA DEVS -->
+      <div
+        onclick="openPopup('Pet Place', './www/img/pet-place.png', 'Cria uma presença online profissional para pet shops, clínicas veterinárias ou negócios voltados ao mundo animal! Este template moderno e totalmente responsivo foi desenvolvido com foco em usabilidade, estética e performance.', 'https://tales-santos7.github.io/', '<i class=\'fab fa-html5 icon\'></i><i class=\'fab fa-css3-alt icon\'></i><i class=\'fab fa-js icon\'></i>', '', '', '', '', '', 'petplace001', '/downloads/pet-place.zip')"
+        class="template-card devs">
+        <img src="./www/img/pet-place.png" alt="Pet Place">
+        <h3>Pet Place</h3>
+        <p>Crie uma presença online profissional com este template moderno, responsivo e otimizado para pet shops,
+          clínicas veterinárias e negócios pet. Desenvolvido com foco em usabilidade, estética e performance.</p>
+        <div class="icons">
+          <i class="fab fa-html5 icon"></i>
+          <i class="fab fa-css3-alt icon"></i>
+          <i class="fab fa-js icon"></i>
+        </div>
+      </div>
+      <!--FIM CARDS PARA DEVS -->
+
+      <!-- INICIO CARDS PARA NÃO DEVS -->
+      <div
+        onclick="openPopup('Gog Info', 'https://placehold.co/800x400', 'Aplicativo web sobre raças de cães', 'https://tales-santos7.github.io/', '<i class=\'fab fa-html5 icon\'></i><i class=\'fab fa-css3-alt icon\'></i><i class=\'fab fa-js icon\'></i>',  '', '', '', '', '', 'goginfo001', '/downloads/gog-info.zip')"
+        class="template-card nao-devs outros-elementos">
+        <img src="https://placehold.co/800x600" alt="Gog Dogs">
+        <h3>Gog Dogs</h3>
+        <p>Aplicativo web sobre raças de cães</p>
+        <div class="icons">
+          <i class="fab fa-html5 icon"></i>
+          <i class="fab fa-css3-alt icon"></i>
+          <i class="fab fa-js icon"></i>
+        </div>
+      </div>
+
+      <!-- FIM CARDS PARA NÃO DEVS -->
+    </div>
+  </div>
+  <!-- Popup -->
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span onclick="closePopup()" class="popup-close">&times;</span>
+      <h3 id="popupTitle" class="popup-title">Título do Projeto</h3>
+      <img id="popupImage" class="popup-image" src="https://placehold.co/400" alt="Imagem do projeto">
+      <div id="popupIcons" class="popup-icons">
+        <i class="fab fa-html5 icon"></i>
+        <i class="fab fa-css3-alt icon"></i>
+        <i class="fab fa-js icon"></i>
+      </div>
+      <div>
+        <p class="popup-description" id="popupDescription"></p>
+      </div>
+      <div class="popup-links">
+        <a id="popupViewLink" href="#" target="_blank" class="popup-link">Visualizar projeto demo</a>
+
+        <!-- Adicionando os inputs de email e telefone -->
+        <div>
+          <input type="text" id="customerNome" placeholder="Digite seu nome" class="popup-input" required>
+        </div>
+        <div>
+          <input type="email" id="customerEmail" placeholder="Digite seu e-mail" class="popup-input" required>
+        </div>
+        <div>
+          <input type="tel" id="customerTelefone" placeholder="Digite seu telefone" class="popup-input" required>
+        </div>
+        <div>
+          <input type="number" id="customerTaxId" placeholder="Digite seu CPF" class="popup-input" required>
+        </div>
+
+        <a id="popupBuyLink" href="#" class="popup-link border-color"
+          onclick="event.preventDefault(); createInvoice();">Adquirir</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPopup(title, imgSrc, description, viewLink, iconsHTML, nome, email, telefone, taxId, paymentLink, productId, arquivo) {
+
+      // Preenchendo os valores do popup
+      document.getElementById('popupTitle').textContent = title;
+      document.getElementById('popupImage').src = imgSrc;
+      document.getElementById('popupDescription').textContent = description;
+      document.getElementById('popupViewLink').href = viewLink;
+      document.getElementById('popupIcons').innerHTML = iconsHTML;
+
+      // Atualiza o campo de nome, e-mail, telefone e CPF com os valores fornecidos, se houver
+      document.getElementById('customerNome').value = nome || '';
+      document.getElementById('customerEmail').value = email || '';
+      document.getElementById('customerTelefone').value = telefone || '';
+      document.getElementById('customerTaxId').value = taxId || '';
+
+      window.selectedProductId = productId;
+      window.selectedProductName = title;
+      window.selectedProductFile = arquivo;
+
+      // Atualiza o link de pagamento apenas no botão "Adquirir"
+      const buyButton = document.getElementById('popupBuyLink');
+      buyButton.href = paymentLink || '#';  // Aqui é o link correto da fatura
+
+      document.getElementById('popup').classList.add('active');
+    }
+
+    function createInvoice() {
+      const nome = document.getElementById('customerNome').value;
+      const email = document.getElementById('customerEmail').value;
+      const telefone = document.getElementById('customerTelefone').value;
+      const taxId = document.getElementById('customerTaxId').value;
+
+      // Verificar se os campos obrigatórios estão preenchidos
+      if (!email || !telefone) {
+        alert("Por favor, preencha o seu dados.");
+        return;
+      }
+
+      // Chamada à API para criar a fatura
+      fetch('http://localhost:3000/criar-fatura', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          productId: window.selectedProductId,
+          externalId: `${Date.now()}`,
+          amount: 500,
+          customer: {
+            name: nome,  // Usando o nome fornecido pelo usuário
+            email: email,  // Usando o e-mail fornecido pelo usuário
+            cellphone: telefone,  // Usando telefone fornecido pelo usuário
+            taxId: taxId  // Usando o CPF fornecido pelo usuário
+          },
+          productName: window.selectedProductName,
+          productFile: window.selectedProductFile
+
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          const buyButton = document.getElementById('popupBuyLink');
+          buyButton.href = data.url;
+          buyButton.target = "_blank";
+
+          // Abre o link da fatura após o href estar atualizado
+          window.open(data.url, '_blank');
+          document.getElementById('popup').classList.add('active');
+        })
+        .catch(error => {
+          console.error('Erro ao criar fatura:', error);
+          alert('Erro ao processar o pagamento. Tente novamente mais tarde.');
+        });
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.remove('active');
+
+      // document.getElementById('popup').classList.add('active');
+    }
+
+    AOS.init();
+
+    const categories = document.querySelectorAll('.category');
+    const cards = document.querySelectorAll('.template-card');
+
+    categories.forEach(category => {
+      category.addEventListener('click', () => {
+        const filter = category.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filter === 'todos') {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = card.classList.contains(filter) ? 'flex' : 'none';
+          }
+        });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray(".outros-elementos").forEach((element) => {
+        gsap.from(element, {
+          opacity: 0,
+          x: -100, // Vem da esquerda
+          y: 20,   // Sobe um pouco ao aparecer
+          duration: 1.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

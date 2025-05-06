@@ -4,3 +4,4 @@
 vendor/
 platforms/
 node_modules/
+.env
