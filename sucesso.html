@@ -10,7 +10,6 @@
 </head>
 
 <body
-
   class="bg-gradient-to-br from-green-600 via-teal-500 to-blue-600 text-white min-h-screen flex items-center justify-center">
 
   <div id="success"
@@ -20,6 +19,7 @@
     </div>
     <h1 id="titulo" class="text-2xl font-bold mb-4">Obrigado pela sua compra!</h1>
     <p class="mb-6">O seu pagamento foi confirmado com sucesso.</p>
+
     <div class="flex flex-col gap-4 items-center">
       <a id="link-download" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" download>
         <i class="fas fa-download mr-2"></i>Baixar Template
@@ -65,13 +65,13 @@
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
+    emailjs.init('W1eA5RLtZTP2dBrXK');
     const params = new URLSearchParams(window.location.search);
     const token = params.get('token');
     let linkDownload = '';
     let nomeProduto = '';
 
-    fetch(`${process.env.API_URL}?token=${token}`)
+    fetch(`http://localhost:3000/validar-token?token=${token}`)
       .then(res => res.json())
       .then(produto => {
         nomeProduto = produto.nome;
@@ -93,7 +93,7 @@
         return alert("O serviço de email ainda não foi carregado. Tente novamente em alguns segundos.");
       }
 
-      emailjs.send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, {
+      emailjs.send("service_sx74paw", "template_cmqq18m", {
         from_name: "Tales Santos", 
         to_email: email,
         reply_to: email,
@@ -107,12 +107,11 @@
 
     }
 
-    window.enviarEmail = enviarEmail; // garante que a função está disponível no onclick 
+    window.enviarEmail = enviarEmail; // garante que a função está disponível no onclick
 
-    // EDITAR O TEMPLATE DO EMAIL https://dashboard.emailjs.com/admin/templates/v4rcfug
 
-    
+ // EDITAR O TEMPLATE DO EMAIL https://dashboard.emailjs.com/admin/templates/v4rcfug
+
   </script>
 </body>
-
 </html>
