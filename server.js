@@ -112,6 +112,7 @@ app.post("/webhook-mercadopago", (req, res) => {
   }
 
   res.sendStatus(200); // Sempre responde para o MP não tentar de novo
+  console.log("Recebido webhook:", req.body);
 });
 
 app.get("/verificar-pagamento", async (req, res) => {
@@ -131,8 +132,6 @@ app.get("/verificar-pagamento", async (req, res) => {
     res.status(500).json({ error: "Erro ao verificar pagamento" });
   }
 });
-console.log("Recebido webhook:", req.body);
-
 
 app.get("/validar-token", (req, res) => {
   const token = req.query.token;
