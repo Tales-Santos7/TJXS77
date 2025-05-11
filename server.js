@@ -126,10 +126,10 @@ app.get("/validar-token", (req, res) => {
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Substitua pelo domínio correto do seu frontend
+    origin: "https://tales-santos-backend.onrender.com/", // Substitua pelo domínio correto do seu frontend
   })
 );
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta http://localhost:3000/`);
+  console.log(`Servidor rodando na porta https://tales-santos-backend.onrender.com/`);
 });
