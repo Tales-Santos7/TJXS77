@@ -131,6 +131,8 @@ app.get("/verificar-pagamento", async (req, res) => {
     res.status(500).json({ error: "Erro ao verificar pagamento" });
   }
 });
+console.log("Recebido webhook:", req.body);
+
 
 app.get("/validar-token", (req, res) => {
   const token = req.query.token;
