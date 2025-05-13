@@ -14,9 +14,14 @@
 <body>
 
     <style>
+        body {
+            color: #fff;
+            background-color: #000;
+        }
+
         .page_404 {
             padding: 40px 0;
-            background: #fff;
+            background: #000;
             font-family: 'Arvo', serif;
         }
 
@@ -25,8 +30,6 @@
         }
 
         .four_zero_four_bg {
-
-            background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
             height: 400px;
             background-position: center;
         }
@@ -47,6 +50,10 @@
             border-radius: 5px;
             margin: 20px 0;
             display: inline-block;
+            position: relative;
+            /* necessário para z-index funcionar */
+            z-index: 9999;
+            /* mais alto que o canvas */
         }
 
         .contant_box_404 {
@@ -72,7 +79,7 @@
 
                             <p>A página que você está procurando não está disponível, volte mais tarde!</p>
 
-                            <a href="./index.html" class="link_404">Ir para a página inicial</a>
+                            <a href="./index.html" class="link_404 voltar">Ir para a página inicial</a>
                         </div>
                     </div>
                 </div>
@@ -103,6 +110,7 @@
         });
 
     </script>
+    <script src="./www/js/largato.js"></script>
 </body>
 
 </html>
