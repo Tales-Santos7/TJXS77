@@ -90,7 +90,7 @@
           <input type="number" id="customerTaxId" placeholder="Digite seu CPF" class="popup-input" required>
         </div>
 
-       <button id="popupBuyLink" class="popup-link border-color" onclick="createInvoice()">Adquirir</button>
+        <button id="popupBuyLink" class="popup-link border-color" onclick="createInvoice()">Adquirir</button>
 
       </div>
     </div>
@@ -135,7 +135,7 @@
         return;
       }
 
-      fetch('https://tales-santos-backend.onrender.com/criar-fatura', {
+      fetch('http://localhost:3000/criar-fatura', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
