@@ -55,7 +55,8 @@ app.post("/criar-fatura", async (req, res) => {
           pending: `https://talessantos-mu.vercel.app/pendente.html`,
         },
         auto_return: "approved",
-        notification_url: "http://localhost:3000/webhook-mercadopago",
+        notification_url:
+          "https://tales-santos-backend-ofl3.onrender.com/webhook-mercadopago",
         external_reference: token,
       },
     });
@@ -71,7 +72,7 @@ app.post("/criar-fatura", async (req, res) => {
       throw new Error("Não foi possível gerar o link de pagamento");
     }
 
-   console.log("Init point:", preferenceResponse.init_point);
+    console.log("Init point:", preferenceResponse.init_point);
     console.log(
       "Raw preferenceResponse:",
       JSON.stringify(preferenceResponse, null, 2)
@@ -179,10 +180,12 @@ app.get("/validar-token", (req, res) => {
 
 app.use(
   cors({
-    origin: "http://localhost:3000/", // Substitua pelo domínio correto do seu frontend
+    origin: "https://talessantos-mu.vercel.app/", // Substitua pelo domínio correto do seu frontend
   })
 );
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta http://localhost:3000/`);
+  console.log(
+    `Servidor rodando na porta https://tales-santos-backend-ofl3.onrender.com/`
+  );
 });
