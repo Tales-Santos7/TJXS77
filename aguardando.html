@@ -51,6 +51,12 @@
         async function verificarPagamento() {
             try {
                 const res = await fetch(`https://tales-santos-backend-ofl3.onrender.com/verificar-pagamento?token=${token}`);
+
+                if (!res.ok) {
+                    setTimeout(verificarPagamento, 5000);
+                    return;
+                }
+
                 const data = await res.json();
 
                 if (data.status === "approved") {

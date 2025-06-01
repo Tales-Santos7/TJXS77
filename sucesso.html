@@ -78,7 +78,7 @@
       .then(produto => {
         nomeProduto = produto.nome;
         linkDownload = produto.arquivo;
-        document.getElementById('titulo').innerText = `Obrigado por comprar o ${produto.nome}!`;
+        document.getElementById('titulo').innerText = `Obrigado por comprar com a gente ${produto.nome}!`;
         document.getElementById('link-download').href = produto.arquivo;
         document.getElementById('success').classList.remove('hidden');
       })
