@@ -31,9 +31,9 @@ body {
   position: fixed;
   height: 100vh;
   display: flex;
-  font-weight: 600;
   flex-direction: column;
-  transition: width 0.3s ease-in-out;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
 }
 
 .sidebar ul li {
@@ -43,7 +43,7 @@ body {
 .sidebar ul li::after {
   content: "";
   position: absolute;
-  top: 33px;
+  top: 34px;
   width: 0%;
   height: 2px;
   background-color: #fbff00;
@@ -61,6 +61,18 @@ body {
   position: absolute;
 }
 
+.icon-link-fim {
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  position: absolute;
+  margin-left: 30%;
+}
+
+.icon-link-fim:hover {
+  color: var(--accent-color);
+}
+
+
 .logo {
   margin-bottom: 3rem;
   text-align: center;
@@ -77,7 +89,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 nav ul li a {
@@ -93,22 +105,14 @@ nav ul li a.active {
   color: var(--accent-color);
 }
 
+.active {
+  color: var(--accent-color);
+}
+
 .social-links {
   margin-top: auto;
   padding: 1rem 0;
 }
-
-.icon-link-fim {
-  color: var(--bg-color);
-  font-size: 1.5rem;
-  position: absolute;
-  margin-left: 30%;
-}
-
-.icon-link-fim:hover {
-  color: var(--accent-color);
-}
-
 
 .social-links a:hover {
   color: var(--accent-color);
