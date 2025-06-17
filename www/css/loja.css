@@ -83,6 +83,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 380px;
 }
 
 .template-card:hover {
@@ -112,6 +113,15 @@ h2 {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.5rem;
+  border-radius: 0.30rem;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border: 2px solid var(--cor-princial);
+  padding: 2.5px;
 }
 
 .icon {
@@ -184,7 +194,7 @@ h2 {
   width: 100%;
   height: 12rem; /* antes: 16rem */
   object-fit: contain;
-  background-color: black;
+  background: linear-gradient(185deg, #ffc1077d, #0d0d1779, #0d0d1777);
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -198,7 +208,7 @@ h2 {
 .popup-icons .icon {
   border: 2px solid var(--cor-princial);
   padding: 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: 6px;
 }
 
 .popup-description {
