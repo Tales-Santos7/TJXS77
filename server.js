@@ -25,7 +25,7 @@ app.post("/criar-fatura", async (req, res) => {
       email: req.body.email,
       telefone: req.body.telefone,
       taxId: req.body.taxId,
-      productName,
+      produto_nome: productName,
       arquivo: req.body.arquivo,
     };
 
