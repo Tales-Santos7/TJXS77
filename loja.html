@@ -14,13 +14,28 @@
 </head>
 
 <body>
-  <a href="./index.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a>
+  <a href="./index.html" class="voltar"><i class='fa fa-arrow-left'></i></a>
   <div class="container">
     <h2>Loja de Projetos</h2>
     <div class="categories">
       <div class="category" data-filter="todos">Todos</div>
       <div class="category" data-filter="devs">Sou dev</div>
       <div class="category" data-filter="nao-devs">Não sou dev</div>
+    </div>
+    <!-- Botão de ajuda fixo -->
+    <button id="toggleAjuda" title="Como funciona?">
+      <i class="fa-solid fa-circle-question"></i>
+    </button>
+
+    <!-- Caixa de ajuda flutuante -->
+    <div id="ajudaBox"
+      class="ajudaBox hidden fixed bottom-24 right-5 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-lg shadow-lg max-w-xs z-50">
+      <h3 class="text-lg font-bold mb-1">Como funciona?</h3>
+      <p class="text-sm leading-relaxed">
+        Para adquirir um produto: escolha e clique em <strong>“Adquirir”</strong>. Você será redirecionado para uma
+        página onde poderá finalizar sua compra. Após confirmar o pedido, clique na opção <strong>“Voltar para o
+          site”</strong>. O download do seu produto será disponibilizado automaticamente.
+      </p>
     </div>
 
     <div class="grid">
@@ -72,7 +87,7 @@
         <div class="icons">
           <img title="JavaScript" src="https://skillicons.dev/icons?i=javascript" alt="JavaScript">
           <img title="NodeJS" src="https://skillicons.dev/icons?i=nodejs" alt="NodeJS">
-           <img title="MongoDB" src="https://skillicons.dev/icons?i=mongo" alt="MongoDB">
+          <img title="MongoDB" src="https://skillicons.dev/icons?i=mongo" alt="MongoDB">
           <img title="HTML" src="https://skillicons.dev/icons?i=html" alt="HTML">
           <img title="CSS" src="https://skillicons.dev/icons?i=css" alt="CSS">
         </div>
@@ -81,11 +96,26 @@
       <!-- FIM CARDS PARA NÃO DEVS -->
     </div>
   </div>
-  <!-- Popup -->
+
   <!-- Popup -->
   <div id="popup" class="popup">
     <div class="popup-content">
       <span onclick="closePopup()" class="popup-close">&times;</span>
+      <!-- Botão de ajuda dentro do popup -->
+      <button id="popupAjudaBtn" title="Como funciona?"
+        class="absolute top-3 right-10 text-yellow-400 hover:text-yellow-500 text-xl">
+        <i class="fa-solid fa-circle-question"></i>
+      </button>
+
+      <!-- Caixa de ajuda no popup -->
+      <div id="popupAjudaBox"
+        class="hidden absolute top-14 right-5 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-lg shadow-lg max-w-sm z-50">
+        <h3 class="text-base font-bold mb-1">Como funciona?</h3>
+        <p class="text-sm leading-relaxed">
+          Clique em <strong>“Adquirir”</strong> e finalize a compra na próxima página. Depois, clique em <strong>“Voltar
+            para o site”</strong> e o download será liberado automaticamente.
+        </p>
+      </div>
       <h3 id="popupTitle" class="popup-title">Título do Projeto</h3>
       <video src="" id="popupImage" class="popup-image" alt="Imagem do projeto" controls muted loop></video>
       <div class="flex items-center justify-between mb-4">
@@ -235,6 +265,15 @@
           }
         });
       });
+    });
+  </script>
+  <script>document.getElementById('toggleAjuda').addEventListener('click', () => {
+      const box = document.getElementById('ajudaBox');
+      box.classList.toggle('hidden');
+    });
+
+    document.getElementById('popupAjudaBtn').addEventListener('click', () => {
+      document.getElementById('popupAjudaBox').classList.toggle('hidden');
     });
   </script>
 </body>
