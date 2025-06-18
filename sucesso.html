@@ -63,6 +63,62 @@
       animation: fade-in 0.8s ease-out forwards;
     }
   </style>
+
+  <script>
+    // CONFIGS. PARA ENVIO DE EMAIL
+    emailjs.init("W1eA5RLtZTP2dBrXK");
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+    let linkDownload = "";
+    let nomeProduto = "";
+
+    fetch(
+      `https://tales-santos-backend-chb9.onrender.com/validar-token?token=${token}`
+    )
+      .then((res) => res.json())
+      .then((produto) => {
+        nomeProduto = produto.produto_nome;
+        linkDownload = produto.arquivo;
+        document.getElementById(
+          "titulo"
+        ).innerText = `Obrigado por comprar com a gente, ${produto.cliente_nome}!`;
+        document.getElementById("link-download").href = produto.arquivo;
+        document.getElementById("success").classList.remove("hidden");
+      })
+      .catch(() => {
+        document.getElementById("error").classList.remove("hidden");
+      });
+
+    function enviarEmail() {
+      const email = document.getElementById("email").value;
+      if (!email) return alert("Por favor, introduza um email válido.");
+
+      // Verifica se emailjs está carregado antes de enviar o email
+      if (typeof emailjs === "undefined") {
+        return alert(
+          "O serviço de email ainda não foi carregado. Tente novamente em alguns segundos."
+        );
+      }
+
+      emailjs
+        .send("service_sx74paw", "template_cmqq18m", {
+          from_name: "Tales Santos",
+          to_email: email,
+          reply_to: email,
+          produto_nome: nomeProduto,
+          link_download: linkDownload,
+        })
+        .then(
+          () => {
+            document.getElementById("email-status").classList.remove("hidden");
+          },
+          () => {
+            alert("Erro ao enviar o email. Tente novamente.");
+          }
+        );
+    }
+    window.enviarEmail = enviarEmail; // garante que a função está disponível no onclick
+  </script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="./www/js/loja.js"></script>
 </body>

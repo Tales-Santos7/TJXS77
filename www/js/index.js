@@ -173,9 +173,3 @@ document.querySelectorAll('.faq-question').forEach(button => {
     }
   });
 });
-
-// FAQ DA LOJA
-document.getElementById('toggleAjuda').addEventListener('click', () => {
-  const box = document.getElementById('ajudaBox');
-  box.classList.toggle('hidden');
-});
