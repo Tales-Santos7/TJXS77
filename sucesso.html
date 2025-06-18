@@ -76,9 +76,9 @@
     fetch(`https://tales-santos-backend-chb9.onrender.com/validar-token?token=${token}`)
       .then(res => res.json())
       .then(produto => {
-        nomeProduto = produto.nome;
+       nomeProduto = produto.produto_nome;
         linkDownload = produto.arquivo;
-        document.getElementById('titulo').innerText = `Obrigado por comprar com a gente ${produto.nome}!`;
+        document.getElementById('titulo').innerText = `Obrigado por comprar com a gente, ${produto.cliente_nome}!`;
         document.getElementById('link-download').href = produto.arquivo;
         document.getElementById('success').classList.remove('hidden');
       })
