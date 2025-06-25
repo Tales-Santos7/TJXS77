@@ -146,6 +146,29 @@ categories.forEach((category) => {
   });
 });
 
+// Ativa a categoria "todos" por padrão e define a cor a categoria selecionada
+const categorias = document.querySelectorAll('.category');
+const categoriaSalva = localStorage.getItem('categoriaSelecionada');
+if (categoriaSalva) {
+  categorias.forEach(c => {
+    c.classList.remove('active');
+    if (c.dataset.filter === categoriaSalva) {
+      c.classList.add('active');
+    }
+  });
+} else {
+  categorias[0].classList.add('active');
+}
+// Adiciona o evento de clique e salva no localStorage
+categorias.forEach(category => {
+  category.addEventListener('click', () => {
+    categorias.forEach(c => c.classList.remove('active'));
+    category.classList.add('active');
+    localStorage.setItem('categoriaSelecionada', category.dataset.filter);
+  });
+});
+
+
 // Animação de entrada
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
