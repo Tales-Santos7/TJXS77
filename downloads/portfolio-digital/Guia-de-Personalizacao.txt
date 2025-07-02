@@ -1,0 +1,65 @@
+🛠️ Guia de Personalização — Portfólio Digital
+
+1. ✅ Como USAR
+
+1. Abre o projeto com um editor de código (ex.: Visual Studio Code).
+2. No diretório `backend/`, cria um ficheiro chamado `.env` com este conteúdo:
+
+MONGO_URI=mongodb+srv://<seus-dados>@cluster0.qh4ha.mongodb.net/?retryWrites=true&w=majority&appName=ClusterX
+POSTIMAGES_API_KEY=sua-chave-aqui
+API_URL=https://seudominio-backend.com
+
+📌 Sobre a API do ImgBB
+Para obter a `POSTIMAGES_API_KEY`:
+- Acesse https://imgbb.com
+- No canto superior esquerdo, clique em "Sobre" > "API"
+
+🧪 Teste a API e a conexão Mongo antes de prosseguir.
+
+2. 🖌️ Como EDITAR
+
+- Os componentes React estão em:
+  painel-blog/src/components/
+
+- Personalização:
+  Basta acessar o painel de administração e realizar as edições visuais com facilidade.
+  Pode alterar textos, imagens, links e cores diretamente pelo painel.
+
+3. 🌐 Como HOSPEDAR
+
+🔹 Backend (Node.js):
+- Hospede em serviços gratuitos ou freemium como:
+  - Render (https://render.com)
+  - Railway (https://railway.app)
+  - Heroku (https://heroku.com)
+
+Ou, se preferir, em serviços pagos como:
+  - Hostinger
+  - GoDaddy
+  - Locaweb
+
+⚙️ Lembre-se de configurar corretamente a variável API_URL no arquivo `.env`.
+
+🔹 Frontend (React):
+- Hospede em:
+  - Vercel (https://vercel.com)
+  - Netlify (https://netlify.com)
+
+Após hospedado, pode conectar o seu domínio personalizado.
+
+4. 🌍 Como COMPRAR UM DOMÍNIO
+
+- Plataformas recomendadas:
+  - registro.br
+  - hostgator.pt
+  - ovh.pt
+
+Passos:
+1. Compre o domínio desejado
+2. No painel da sua hospedagem, aponte o domínio para o servidor onde o site está hospedado
+
+💡 DICA IMPORTANTE
+Mantenha sempre backups atualizados dos seus ficheiros e teste localmente antes de publicar em produção.
+
+Desejo-te muito sucesso com o teu projeto! 🚀
+Tales Santos

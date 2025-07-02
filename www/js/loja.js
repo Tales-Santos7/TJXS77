@@ -30,7 +30,7 @@ function openPopup(
   title,
   imgSrc,
   description,
-  viewLink,
+  demoLink, // novo nome
   iconsHTML,
   price,
   nome,
@@ -40,13 +40,17 @@ function openPopup(
   paymentLink,
   productId,
   arquivo,
-  amount
+  amount,
+  panelLink // novo parâmetro adicionado no final
 ) {
-  // Preenchendo os valores do popup
   document.getElementById("popupTitle").textContent = title;
   document.getElementById("popupImage").src = imgSrc;
   document.getElementById("popupDescription").textContent = description;
-  document.getElementById("popupViewLink").href = viewLink;
+
+  // Corrigido os IDs aqui:
+  document.getElementById("popupDemoLink").href = demoLink || "#";
+  document.getElementById("popupPanelLink").href = panelLink || "#";
+
   document.getElementById("popupIcons").innerHTML = iconsHTML;
   document.getElementById(
     "price"
@@ -56,7 +60,6 @@ function openPopup(
     .toFixed(2)
     .replace(".", ",")}</span>`;
 
-  // Atualiza o campo de nome, e-mail, telefone e CPF com os valores fornecidos, se houver
   document.getElementById("customerNome").value = nome || "";
   document.getElementById("customerEmail").value = email || "";
   document.getElementById("customerTelefone").value = telefone || "";
@@ -66,10 +69,6 @@ function openPopup(
   window.selectedProductName = title;
   window.selectedProductFile = arquivo;
   window.selectedProductAmount = amount;
-
-  // Atualiza o link de pagamento apenas no botão "Adquirir"
-  const buyButton = document.getElementById("popupBuyLink");
-  buyButton.href = paymentLink || "#"; // Aqui é o link correto da fatura
 
   document.getElementById("popup").classList.add("active");
 }
@@ -147,27 +146,26 @@ categories.forEach((category) => {
 });
 
 // Ativa a categoria "todos" por padrão e define a cor a categoria selecionada
-const categorias = document.querySelectorAll('.category');
-const categoriaSalva = localStorage.getItem('categoriaSelecionada');
+const categorias = document.querySelectorAll(".category");
+const categoriaSalva = localStorage.getItem("categoriaSelecionada");
 if (categoriaSalva) {
-  categorias.forEach(c => {
-    c.classList.remove('active');
+  categorias.forEach((c) => {
+    c.classList.remove("active");
     if (c.dataset.filter === categoriaSalva) {
-      c.classList.add('active');
+      c.classList.add("active");
     }
   });
 } else {
-  categorias[0].classList.add('active');
+  categorias[0].classList.add("active");
 }
 // Adiciona o evento de clique e salva no localStorage
-categorias.forEach(category => {
-  category.addEventListener('click', () => {
-    categorias.forEach(c => c.classList.remove('active'));
-    category.classList.add('active');
-    localStorage.setItem('categoriaSelecionada', category.dataset.filter);
+categorias.forEach((category) => {
+  category.addEventListener("click", () => {
+    categorias.forEach((c) => c.classList.remove("active"));
+    category.classList.add("active");
+    localStorage.setItem("categoriaSelecionada", category.dataset.filter);
   });
 });
-
 
 // Animação de entrada
 document.addEventListener("DOMContentLoaded", function () {
