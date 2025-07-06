@@ -1,4 +1,4 @@
-// COR DO TEMA
+// COR DO SITE
 fetch("https://portfolio-digital-g7mp.onrender.com/content/theme")
   .then((res) => res.json())
   .then((data) => {
@@ -7,7 +7,7 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/theme")
     }
   });
 
-// Nome do site (title + rodapé)
+// Nome do site (titulo + rodapé)
 fetch("https://portfolio-digital-g7mp.onrender.com/content/site-name")
   .then((res) => {
     if (!res.ok) throw res;
@@ -65,7 +65,7 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/logo")
   })
   .catch((error) => console.error("Erro ao carregar logo:", error));
 
-// LOGO-IMAGEM DO RODAP
+// LOGO-IMAGEM DO RODAPÉ
 window.addEventListener("DOMContentLoaded", () => {
   fetch("https://portfolio-digital-g7mp.onrender.com/content/footer-logo")
     .then((res) => res.json())

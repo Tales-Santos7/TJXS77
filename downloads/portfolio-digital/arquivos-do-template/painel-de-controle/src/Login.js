@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importando os ícones
-import "./App.css"; // Opcional: reutilizar estilos do projeto
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import "./App.css";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
 
     if (username === "admin" && password === "1234") {
       onLogin(true);
-      sessionStorage.setItem("auth", "true"); // Segurança melhorada
+      sessionStorage.setItem("auth", "true");
       navigate("/dashboard"); // Redirecionar após login
     } else {
       setError("Usuário ou senha inválidos!");

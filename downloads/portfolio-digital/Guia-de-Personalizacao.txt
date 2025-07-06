@@ -20,7 +20,6 @@ Para obter a `POSTIMAGES_API_KEY`:
 
 - Os componentes React estão em:
   painel-blog/src/components/
-
 - Personalização:
   Basta acessar o painel de administração e realizar as edições visuais com facilidade.
   Pode alterar textos, imagens, links e cores diretamente pelo painel.
@@ -61,5 +60,5 @@ Passos:
 💡 DICA IMPORTANTE
 Mantenha sempre backups atualizados dos seus ficheiros e teste localmente antes de publicar em produção.
 
-Desejo-te muito sucesso com o teu projeto! 🚀
-Tales Santos
+Te desejo muito sucesso com o teu projeto! 🚀
+Tales Santos,

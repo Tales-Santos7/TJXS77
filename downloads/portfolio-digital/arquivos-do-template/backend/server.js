@@ -1,4 +1,4 @@
-// Backend completo com upload para imgbb
+// 📦 IMPORTAÇÕES E CONFIGURAÇÃO INICIAL
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -14,6 +14,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
+// CONEXÃO COM MONGODB
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -24,7 +25,7 @@ mongoose
 
 const upload = multer({ dest: "temp/" });
 
-// Esquema Content
+// SCHEMA PARA CONTEÚDO DO SITE (logo, hero, galeria, etc.)
 const contentSchema = new mongoose.Schema({
   section: { type: String, required: true },
   color: String,
@@ -34,7 +35,7 @@ const contentSchema = new mongoose.Schema({
 });
 const Content = mongoose.model("Content", contentSchema);
 
-// ATUALIZAR A MARCA D'AGUA DO NAV
+// ===================== MARCA D'AGUA DO NAV (logo principal) =====================
 app.get("/content/logo", async (req, res) => {
   try {
     const logo = await Content.findOne({ section: "logo" });
@@ -50,7 +51,7 @@ app.put("/content/logo", async (req, res) => {
   try {
     const logo = await Content.findOneAndUpdate(
       { section: "logo" },
-      { title, description, images: images || [] }, // aqui usa images do corpo ou vazio
+      { title, description, images: images || [] },
       { new: true, upsert: true }
     );
     res.json(logo);
@@ -58,8 +59,9 @@ app.put("/content/logo", async (req, res) => {
     res.status(500).json({ message: "Erro ao atualizar a logo textual" });
   }
 });
+// ===================== FIM DA MARCA D'AGUA DO NAV (logo principal) =====================
 
-// ATUALIZAR A MARCA D'AGUA DO RODAPÉ
+// ===================== MARCA D'AGUA DO RODAPÉ =====================
 app.get("/content/footer-logo", async (req, res) => {
   try {
     const content = await Content.findOne({ section: "footer-logo" });
@@ -108,8 +110,10 @@ app.put("/content/footer-logo", upload.single("image"), async (req, res) => {
     res.status(500).json({ message: "Erro ao atualizar logo do rodapé" });
   }
 });
+// ===================== FIM DA MARCA D'AGUA DO RODAPÉ =====================
 
-// NOME DO SITE
+// ===================== NOME DO SITE =====================
+
 app.get("/content/site-name", async (req, res) => {
   try {
     const item = await Content.findOne({ section: "site-name" });
@@ -121,7 +125,6 @@ app.get("/content/site-name", async (req, res) => {
   }
 });
 
-// atualizar nome do site
 app.put("/content/site-name", async (req, res) => {
   const { title } = req.body;
   try {
@@ -135,8 +138,9 @@ app.put("/content/site-name", async (req, res) => {
     res.status(500).json({ message: "Erro ao atualizar nome do site" });
   }
 });
+// ===================== FIM DO NOME DO SITE =====================
 
-// IMAGEM DA HERO
+// ===================== IMAGEM DA HERO =====================
 app.get("/content/hero", async (req, res) => {
   try {
     const hero = await Content.findOne({ section: "hero" });
@@ -189,8 +193,9 @@ app.put("/content/hero", upload.array("images", 1), async (req, res) => {
     return res.status(500).json({ message: "Erro ao salvar imagem da hero" });
   }
 });
+// ===================== FIM DA IMAGEM DA HERO =====================
 
-// GALERIA
+// ===================== GALERIA =====================
 app.delete("/content/gallery", async (req, res) => {
   try {
     const { imageUrl } = req.query;
@@ -211,7 +216,6 @@ app.delete("/content/gallery", async (req, res) => {
   }
 });
 
-//ATUALIZAR GALERIA
 app.put("/content/gallery/update", upload.single("image"), async (req, res) => {
   try {
     const { oldImageUrl } = req.body;
@@ -287,8 +291,9 @@ app.put("/content/gallery", upload.array("images", 10), async (req, res) => {
     res.status(500).json({ message: "Erro ao adicionar imagens à galeria" });
   }
 });
+// ===================== FIM DA GALERIA =====================
 
-// Atualizar a cor
+// ===================== TEMA DO SITE (Cor) =====================
 app.put("/content/theme", async (req, res) => {
   const { color } = req.body;
   try {
@@ -314,7 +319,9 @@ app.get("/content/theme", async (req, res) => {
     res.status(500).json({ message: "Erro ao obter o tema" });
   }
 });
+// ===================== FIM DO TEMA DO SITE (Cor) =====================
 
+// ===================== SOBRE MIM =====================
 app.put("/content/:section", async (req, res) => {
   const { section } = req.params;
   const { title, description } = req.body;
@@ -343,8 +350,9 @@ app.get("/content/:section", async (req, res) => {
     res.status(500).json({ message: "Erro ao obter conteúdo da seção" });
   }
 });
+// ===================== FIM DO SOBRE MIM =====================
 
-// BLOG
+// ===================== BLOG =====================
 const postSchema = new mongoose.Schema({
   title: String,
   content: String,
@@ -441,15 +449,15 @@ app.get("/blog/:id", async (req, res) => {
     res.status(500).json({ message: "Erro ao buscar o post" });
   }
 });
+// ===================== FIM DO BLOG =====================
 
-// Redes Sociais
+// ===================== REDES SOCIAIS =====================
 const socialSchema = new mongoose.Schema({
   name: String,
   url: String,
 });
 const SocialLink = mongoose.model("SocialLink", socialSchema);
 
-// Obter todas as redes sociais
 app.get("/social-links", async (req, res) => {
   try {
     const links = await SocialLink.find();
@@ -509,9 +517,10 @@ app.delete("/social-links/:id", async (req, res) => {
     res.status(500).json({ message: "Erro ao remover rede social" });
   }
 });
+// ===================== FIM DAS REDES SOCIAIS =====================
 
 // Serve os ficheiros estáticos da aplicação React
-app.use(express.static(path.join(__dirname, "public"))); // ou "build" se estiveres a usar `npm run build`
+app.use(express.static(path.join(__dirname, "public")));
 
 // Redireciona todas as rotas desconhecidas para o index.html (SPA)
 app.get("/", (req, res) => {
