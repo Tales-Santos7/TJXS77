@@ -121,6 +121,7 @@ h2 {
   height: 24px;
   object-fit: contain;
   border: 2px solid var(--cor-princial);
+  border-radius: 10px;
   padding: 2.5px;
 }
 
@@ -343,4 +344,73 @@ h2 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* MAIS DETALHES */
+
+.detalhes-produto {
+  background-color: #1a1a28;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.1);
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.titulo {
+  font-size: 2.25rem;
+  color: var(--cor-princial);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.video-wrapper video {
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid var(--cor-princial);
+}
+
+.descricao {
+  font-size: 1rem;
+  color: #e5e7eb;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.tecnologias-bloco h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.tecnologias img {
+  transition: transform 0.3s ease;
+}
+.tecnologias img:hover {
+  transform: scale(1.2);
+}
+
+.botao-voltar {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-princial);
+  color: #000;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.botao-voltar:hover {
+  background-color: #d1a30d;
+}
+
+i {
+  color: #fff;
+}
+
+a {
+  text-decoration: none !important;
 }

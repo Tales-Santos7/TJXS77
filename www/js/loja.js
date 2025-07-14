@@ -1,4 +1,4 @@
-// Toggle principal
+// =========================== MENU MOBILE ============================
 document.getElementById("toggleAjuda").addEventListener("click", (e) => {
   e.stopPropagation();
   const box = document.getElementById("ajudaBox");
@@ -25,12 +25,12 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// FUNCÕES PARA ABRIR O POPUP
+// =========================== FUNCÕES PARA ABRIR O POPUP ============================
 function openPopup(
   title,
   imgSrc,
   description,
-  demoLink, // novo nome
+  demoLink,
   iconsHTML,
   price,
   nome,
@@ -41,7 +41,8 @@ function openPopup(
   productId,
   arquivo,
   amount,
-  panelLink // novo parâmetro adicionado no final
+  panelLink,
+  detalheLink
 ) {
   document.getElementById("popupTitle").textContent = title;
   document.getElementById("popupImage").src = imgSrc;
@@ -50,6 +51,9 @@ function openPopup(
   // Corrigido os IDs aqui:
   document.getElementById("popupDemoLink").href = demoLink || "#";
   document.getElementById("popupPanelLink").href = panelLink || "#";
+  document.getElementById(
+    "popupdetalheLink"
+  ).href = `detalhes.html?id=${productId}&from=popup`;
 
   document.getElementById("popupIcons").innerHTML = iconsHTML;
   document.getElementById(
@@ -123,51 +127,55 @@ function createInvoice() {
 function closePopup() {
   document.getElementById("popup").classList.remove("active");
 
-  // document.getElementById('popup').classList.add('active');
+  const url = new URL(window.location);
+  url.searchParams.delete("popupId");
+  window.history.replaceState({}, document.title, url);
 }
 
 AOS.init();
 
+// =========================== CATEGORIAS E FILTRO ============================
 const categories = document.querySelectorAll(".category");
 const cards = document.querySelectorAll(".template-card");
 
-categories.forEach((category) => {
-  category.addEventListener("click", () => {
-    const filter = category.getAttribute("data-filter");
-
-    cards.forEach((card) => {
-      if (filter === "todos") {
-        card.style.display = "flex";
-      } else {
-        card.style.display = card.classList.contains(filter) ? "flex" : "none";
-      }
-    });
-  });
-});
-
-// Ativa a categoria "todos" por padrão e define a cor a categoria selecionada
-const categorias = document.querySelectorAll(".category");
-const categoriaSalva = localStorage.getItem("categoriaSelecionada");
-if (categoriaSalva) {
-  categorias.forEach((c) => {
-    c.classList.remove("active");
-    if (c.dataset.filter === categoriaSalva) {
-      c.classList.add("active");
+function filtrarCards(filter) {
+  cards.forEach((card) => {
+    if (filter === "todos") {
+      card.style.display = "flex";
+    } else {
+      card.style.display = card.classList.contains(filter) ? "flex" : "none";
     }
   });
-} else {
-  categorias[0].classList.add("active");
 }
-// Adiciona o evento de clique e salva no localStorage
-categorias.forEach((category) => {
+
+// Evento de clique nas categorias
+categories.forEach((category) => {
   category.addEventListener("click", () => {
-    categorias.forEach((c) => c.classList.remove("active"));
+    const filter = category.dataset.filter;
+    filtrarCards(filter);
+
+    // Remove active e aplica active
+    categories.forEach((c) => c.classList.remove("active"));
     category.classList.add("active");
-    localStorage.setItem("categoriaSelecionada", category.dataset.filter);
+
+    // Salva no localStorage
+    localStorage.setItem("categoriaSelecionada", filter);
   });
 });
 
-// Animação de entrada
+// No carregamento da página, lê a categoria salva e aplica o filtro + active
+const categoriaSalva = localStorage.getItem("categoriaSelecionada") || "todos";
+categories.forEach((category) => {
+  category.classList.remove("active");
+  if (category.dataset.filter === categoriaSalva) {
+    category.classList.add("active");
+  }
+});
+
+// Aplica filtro baseado na categoria salva
+filtrarCards(categoriaSalva);
+
+// =========================== ANIMAÇÃO DE ENTRADA ============================
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 

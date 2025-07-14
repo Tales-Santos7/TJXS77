@@ -1,13 +1,11 @@
-🛠️ Guia de Personalização — Portfólio Digital
+🛠️ Guia de Personalização — Página de Links
 
 1. ✅ Como USAR
-
 1. Abre o projeto com um editor de código (ex.: Visual Studio Code).
-2. No diretório `backend/`, cria um ficheiro chamado `.env` com este conteúdo:
+2. No diretório `Backend/`, cria um ficheiro chamado `.env` com este conteúdo:
 
 MONGO_URI=mongodb+srv://<seus-dados>@cluster0.qh4ha.mongodb.net/?retryWrites=true&w=majority&appName=ClusterX
 POSTIMAGES_API_KEY=sua-chave-aqui
-API_URL=https://seudominio-backend.com
 
 📌 Sobre a API do ImgBB
 Para obter a `POSTIMAGES_API_KEY`:

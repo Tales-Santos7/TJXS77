@@ -4,64 +4,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Painel de Controle - Links</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
-      padding: 2rem;
-    }
-
-    h1 {
-      color: #ffc107;
-    }
-
-    form,
-    .link-item {
-      background: #222;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    input {
-      border-radius: 5px;
-      padding: 0.5rem;
-      margin: 0.3rem;
-      width: 40%;
-    }
-
-    button {
-      padding: 0.5rem;
-      margin-left: 0.5rem;
-      border-radius: 5px;
-      background-color: #ffc107;
-      border: none;
-      cursor: pointer;
-    }
-
-    .link-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .link-info {
-      flex-grow: 1;
-    }
-  </style>
+  <title>Painel de Controle</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/style.css" />
 </head>
 
 <body>
-  <h1>Gerir Links</h1>
-  <form id="form-link">
-    <input type="text" id="title" placeholder="Título do Link" required />
-    <input type="url" id="url" placeholder="URL do Link" required />
-    <input type="hidden" id="linkId" />
-    <button type="submit">Salvar</button>
-  </form>
-  <div id="links"></div>
+  <!-- NAVEGAÇÃO LATERAL -->
+  <aside>
+    <h1>Painel</h1>
+    <div class="nav-link active" data-target="sec-foto">
+      <span class="material-icons">image</span> Foto de Perfil
+    </div>
+    <div class="nav-link" data-target="form-perfil">
+      <span class="material-icons">person</span> Dados Pessoais
+    </div>
+    <div class="nav-link" data-target="form-link">
+      <span class="material-icons">link</span> Adicionar Link
+    </div>
+    <div class="nav-link" data-target="sec-lista">
+      <span class="material-icons">list</span> Meus Links
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <section id="sec-foto" class="card active">
+      <h2>Foto de Perfil</h2>
+      <img id="imagemAtual" src="" alt="Imagem atual" style="display: none;" />
+      <label for="avatarInput">Upload de Imagem</label>
+      <input type="file" id="avatarInput" accept="image/*" />
+      <button id="btnAtualizarFoto">Atualizar</button>
+      <button class="danger" id="btnExcluirImagem">Excluir</button>
+    </section>
+
+    <form id="form-perfil" class="card" novalidate>
+      <h2>Dados do Perfil</h2>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" required />
+      <label for="bio">Bio</label>
+      <input type="text" id="bio" required />
+      <label for="footer">Rodapé</label>
+      <input type="text" id="footer" required />
+      <button type="submit">Salvar Perfil</button>
+    </form>
+
+    <form id="form-link" class="card" novalidate>
+      <h2>Adicionar Link</h2>
+      <label for="title">Título</label>
+      <input type="text" id="title" required />
+      <label for="url">URL</label>
+      <input type="url" id="url" required />
+      <input type="hidden" id="linkId" />
+      <button type="submit">Salvar Link</button>
+    </form>
+
+    <section id="sec-lista" class="card link-list">
+      <h2>Meus Links</h2>
+      <div id="links"></div>
+    </section>
+  </main>
   <script src="./src/js/script.js"></script>
 </body>
+
 </html>
