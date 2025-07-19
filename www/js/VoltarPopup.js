@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const produto = {
       "pagina-links": {
         title: "Página de links",
-        imgSrc: "./www/img/img_projetos/linktre.mp4",
+        imgSrc: "./www/img/img_projetos/linktree.mp4",
         description:
           "Template moderno e funcional para criadores de conteúdo...",
         demo: "https://demo-pagina-de-links.vercel.app/",
@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
       },
       "portfolio-digital": {
         title: "Portfólio Digital",
-        imgSrc: "./www/img/img_projetos/linktre.mp4",
+        imgSrc: "./www/img/img_projetos/portfolio-digital.mp4",
         description:
           "Template para influenciadoras digitais com painel de controle...",
         demo: "https://demo-portfolio-digital.vercel.app/",

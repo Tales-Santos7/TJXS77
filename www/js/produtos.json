@@ -2,16 +2,24 @@
   {
     "id": "pagina-links",
     "titulo": "Página de Links",
+    "LinkDemo": "https://demo-pagina-de-links.vercel.app/",
+    "DemoPainel": "https://demo-painel-pagina-de-links.vercel.app/",
     "descricao": "Template moderno e funcional para criadores de conteúdo que desejam centralizar os seus links de forma profissional. Ideal para influenciadoras digitais, freelancers ou pequenos negócios, este projeto permite criar uma página (link na bio) totalmente personalizável, com design elegante e compatível com dispositivos móveis.",
-    "video": "./www/img/img_projetos/linktre.mp4",
+    "video": "./www/img/img_projetos/linktree.mp4",
     "tecnologias": [
-      { "nome": "JavaScript", "icone": "https://skillicons.dev/icons?i=javascript" },
+      {
+        "nome": "JavaScript",
+        "icone": "https://skillicons.dev/icons?i=javascript"
+      },
       { "nome": "NodeJS", "icone": "https://skillicons.dev/icons?i=nodejs" },
       { "nome": "HTML", "icone": "https://skillicons.dev/icons?i=html" },
       { "nome": "CSS", "icone": "https://skillicons.dev/icons?i=css" },
       { "nome": "MongoDB", "icone": "https://skillicons.dev/icons?i=mongo" },
-       { "nome": "Express", "icone": "https://skillicons.dev/icons?i=express" },
-      { "nome": "ImgBB", "icone": "https://pipedream.com/s.v0/app_1M0hkk/logo/orig" }
+      { "nome": "Express", "icone": "https://skillicons.dev/icons?i=express" },
+      {
+        "nome": "ImgBB",
+        "icone": "https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
+      }
     ],
     "funcionalidades": [
       "Código fonte completo (frontend + backend + painel de controle)",
@@ -27,21 +35,43 @@
       "Backend": "NodeJS, Express, ImgBB (Para upload de imagens)",
       "Banco de dados": "MongoDB"
     },
+    "screenshots": [
+      "./www/img/img_projetos/linktree.png",
+      "./www/img/img_projetos/painel-linktree.png"
+    ],
+    "faq": [
+      {
+        "pergunta": "Preciso saber programar?",
+        "resposta": "Não! O painel é feito para leigos."
+      },
+      {
+        "pergunta": "Posso usar em mais de um projeto?",
+        "resposta": "Sim, o código é seu."
+      }
+    ],
     "notaAutor": "Ideal para criadoras de conteúdo que desejam profissionalizar sua presença online com autonomia."
   },
   {
     "id": "portfolio-digital",
     "titulo": "Portfólio Digital",
+    "LinkDemo": "https://demo-portfolio-digital.vercel.app/",
+    "DemoPainel": "https://demo-painel-portfolio-digital.vercel.app/",
     "descricao": "Template para influenciadoras digitais com painel de controle e integração com redes sociais. Ideal para criadoras de conteúdo que precisam de um site profissional sem depender de agência.",
-    "video": "./www/img/img_projetos/linktre.mp4",
+    "video": "./www/img/img_projetos/portfolio-digital.mp4",
     "tecnologias": [
-      { "nome": "JavaScript", "icone": "https://skillicons.dev/icons?i=javascript" },
+      {
+        "nome": "JavaScript",
+        "icone": "https://skillicons.dev/icons?i=javascript"
+      },
       { "nome": "NodeJS", "icone": "https://skillicons.dev/icons?i=nodejs" },
       { "nome": "HTML", "icone": "https://skillicons.dev/icons?i=html" },
       { "nome": "CSS", "icone": "https://skillicons.dev/icons?i=css" },
       { "nome": "MongoDB", "icone": "https://skillicons.dev/icons?i=mongo" },
       { "nome": "Express", "icone": "https://skillicons.dev/icons?i=express" },
-      { "nome": "ImgBB", "icone": "https://pipedream.com/s.v0/app_1M0hkk/logo/orig" }
+      {
+        "nome": "ImgBB",
+        "icone": "https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
+      }
     ],
     "funcionalidades": [
       "Código fonte completo (frontend + backend + painel de controle)",
@@ -57,6 +87,20 @@
       "Backend": "NodeJS, Express, ImgBB (Para upload de imagens)",
       "Banco de dados": "MongoDB"
     },
+    "screenshots": [
+      "./www/img/portfolio-digital.png",
+      "./www/img/img_projetos/captura2.jpg"
+    ],
+    "faq": [
+      {
+        "pergunta": "Preciso saber programar?",
+        "resposta": "Não! O painel é feito para leigos."
+      },
+      {
+        "pergunta": "Posso usar em mais de um projeto?",
+        "resposta": "Sim, o código é seu."
+      }
+    ],
     "notaAutor": "Ideal para criadoras de conteúdo que desejam profissionalizar sua presença online com autonomia."
   }
 ]

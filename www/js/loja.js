@@ -48,9 +48,9 @@ function openPopup(
   document.getElementById("popupImage").src = imgSrc;
   document.getElementById("popupDescription").textContent = description;
 
-  // Corrigido os IDs aqui:
-  document.getElementById("popupDemoLink").href = demoLink || "#";
-  document.getElementById("popupPanelLink").href = panelLink || "#";
+  // // Corrigido os IDs aqui:
+  // document.getElementById("popupDemoLink").href = demoLink || "#";
+  // document.getElementById("popupPanelLink").href = panelLink || "#";
   document.getElementById(
     "popupdetalheLink"
   ).href = `detalhes.html?id=${productId}&from=popup`;

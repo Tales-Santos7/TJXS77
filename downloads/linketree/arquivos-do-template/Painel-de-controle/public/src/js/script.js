@@ -5,10 +5,12 @@ async function carregarPerfil() {
     const perfil = await res.json();
 
     // Atualiza página pública
-    if (document.getElementById("nomePerfil")) {
+     if (document.getElementById("nomePerfil")) {
       document.getElementById("nomePerfil").textContent = perfil.name || "";
       document.getElementById("bioPerfil").textContent = perfil.bio || "";
       document.querySelector("footer").textContent = perfil.footer || "";
+      document.title = `Links for - ${perfil.name || "Usuário"}`;
+
       const avatar = document.querySelector(".avatar img");
       if (avatar && perfil.imageUrl) avatar.src = perfil.imageUrl;
     }
