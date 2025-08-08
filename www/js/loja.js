@@ -77,16 +77,35 @@ function openPopup(
   document.getElementById("popup").classList.add("active");
 }
 
+function showError(message) {
+  const errorDiv = document.getElementById("formError");
+  errorDiv.textContent = message;
+  errorDiv.style.display = "block";
+}
+
+function clearError() {
+  const errorDiv = document.getElementById("formError");
+  errorDiv.textContent = "";
+  errorDiv.style.display = "none";
+}
+
 function createInvoice() {
   const nome = document.getElementById("customerNome").value;
   const email = document.getElementById("customerEmail").value;
   const telefone = document.getElementById("customerTelefone").value;
   const taxId = document.getElementById("customerTaxId").value;
+  const buyButton = document.getElementById("popupBuyLink");
 
-  if (!email || !telefone || !taxId || !nome) {
-    alert("Por favor, preencha todos os dados.");
+  clearError(); 
+
+  if (!nome || !email || !telefone || !taxId) {
+    showError("⚠️ Por favor, preencha todos os campos antes de continuar.");
     return;
   }
+
+  // Desativa botão e mostra loader
+  buyButton.disabled = true;
+  buyButton.innerHTML = 'Processando <span class="loading-spinner"></span>';
 
   fetch("https://tales-santos-backend-chb9.onrender.com/criar-fatura", {
     method: "POST",
@@ -103,24 +122,19 @@ function createInvoice() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("Resposta da API:", data);
       if (!data.url) {
         alert("Erro: o link de pagamento não foi retornado corretamente.");
+        buyButton.disabled = false;
+        buyButton.innerHTML = "Adquirir";
         return;
       }
       window.location.href = data.url;
     })
     .catch((error) => {
-      if (error.response) {
-        console.error("Erro ao criar fatura (response):", error.response.data);
-      } else if (error.request) {
-        console.error("Erro ao criar fatura (request):", error.request);
-      } else {
-        console.error("Erro ao criar fatura (outro):", error.message);
-      }
-      alert(
-        "Erro ao processar o pagamento. Verifica o console para mais detalhes."
-      );
+      console.error("Erro ao criar fatura:", error);
+      alert("Erro ao processar o pagamento. Verifique o console para mais detalhes.");
+      buyButton.disabled = false;
+      buyButton.innerHTML = "Adquirir";
     });
 }
 
@@ -194,3 +208,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
