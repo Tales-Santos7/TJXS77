@@ -371,6 +371,26 @@ h2 {
   border: 2px solid var(--cor-princial);
 }
 
+.secao {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .secao {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .secao {
+    font-size: 1.2rem; 
+  }
+
+  .secao h3 {
+    font-size: 1.3rem; 
+  }
+}
+
 .demo-links {
   display: flex;
   justify-content: center;
