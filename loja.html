@@ -123,7 +123,6 @@
   <!-- Popup -->
   <div id="popup" class="popup">
     <div class="popup-content">
-      <div id="formError" class="form-error" style="display:none;"></div>
       <span onclick="closePopup()" class="popup-close">&times;</span>
       <!-- Botão de ajuda dentro do popup -->
       <button id="popupAjudaBtn" title="Como funciona?"
@@ -151,11 +150,9 @@
       </div>
       <div class="popup-links">
         <div class="popup-link-row">
-          <!-- <a id="popupDemoLink" href="#" target="_blank" class="popup-link">Projeto demo</a>
-          <a id="popupPanelLink" href="#" target="_blank" class="popup-link demo">Painel demo</a> -->
           <a id="popupdetalheLink" href="#" class="popup-link">Mais detalhes</a>
         </div>
-
+        <div id="formError" class="form-error" style="display:none;"></div>
         <div>
           <input type="text" id="customerNome" placeholder="Digite seu nome" class="popup-input" required maxlength="100">
         </div>
