@@ -32,7 +32,7 @@ fetch("./www/js/produtos.json")
       document.getElementById("faq").innerHTML = produto.faq
         .map(
           (q) => `
-        <div class="faq-item">
+        <div class="faq-item secao">
           <button class="faq-question">
             ${q.pergunta}
             <span class="arrow">&#9662;</span>
