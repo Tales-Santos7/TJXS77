@@ -1,5 +1,7 @@
+const apiUrl = window.API_URL;
+
 // COR DO SITE
-fetch("https://portfolio-digital-g7mp.onrender.com/content/theme")
+fetch(`${apiUrl}/content/theme`)
   .then((res) => res.json())
   .then((data) => {
     if (data.color) {
@@ -8,7 +10,7 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/theme")
   });
 
 // Nome do site (titulo + rodapé)
-fetch("https://portfolio-digital-g7mp.onrender.com/content/site-name")
+fetch(`${apiUrl}/content/site-name`)
   .then((res) => {
     if (!res.ok) throw res;
     return res.json();
@@ -24,7 +26,7 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/site-name")
 
 // ÍCONES DO NAV E MENU MOBILE
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://portfolio-digital-g7mp.onrender.com/social-links")
+  fetch(`${apiUrl}/social-links`)
     .then((res) => res.json())
     .then((links) => {
       const top = document.getElementById("social-icons-top");
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // LOGO TEXTO DO NAV
-fetch("https://portfolio-digital-g7mp.onrender.com/content/logo")
+fetch(`${apiUrl}/content/logo`)
   .then((res) => res.json())
   .then((data) => {
     const container = document.getElementById("logo-container");
@@ -65,9 +67,31 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/logo")
   })
   .catch((error) => console.error("Erro ao carregar logo:", error));
 
+// FAVICON
+document.addEventListener("DOMContentLoaded", () => {
+  fetch(`${apiUrl}/content/favicon`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.images && data.images.length > 0) {
+        const faviconUrl = data.images[0] + "?t=" + Date.now();
+
+        let favicon = document.querySelector("link[rel='icon']");
+        if (!favicon) {
+          favicon = document.createElement("link");
+          favicon.rel = "icon";
+          document.head.appendChild(favicon);
+        }
+
+        favicon.type = "image/png";
+        favicon.href = faviconUrl;
+      }
+    })
+    .catch((err) => console.warn("Erro ao carregar favicon:", err));
+});
+
 // LOGO-IMAGEM DO RODAPÉ
 window.addEventListener("DOMContentLoaded", () => {
-  fetch("https://portfolio-digital-g7mp.onrender.com/content/footer-logo")
+  fetch(`${apiUrl}/content/footer-logo`)
     .then((res) => res.json())
     .then((data) => {
       const logoImg = document.getElementById("footer-logo");
@@ -79,18 +103,29 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // HERO IMAGE + SEÇÃO PRINCIPAL
-fetch("https://portfolio-digital-g7mp.onrender.com/content/hero")
+fetch(`${apiUrl}/content/hero`)
   .then((res) => res.json())
   .then((data) => {
     const heroImage = document.getElementById("hero-photo");
+    const heroImageDropdown = document.getElementById("hero-photo-dropdown"); // NOVO
+
     if (data.images && data.images.length > 0) {
-      heroImage.src = data.images[0];
-      heroImage.style.display = "block";
+      const imageUrl = data.images[0];
+
+      if (heroImage) {
+        heroImage.src = imageUrl;
+        heroImage.style.display = "block";
+      }
+
+      if (heroImageDropdown) {
+        heroImageDropdown.src = imageUrl;
+        heroImageDropdown.style.display = "block";
+      }
     }
   })
   .catch((error) => console.error("Erro ao carregar imagem da hero:", error));
 
-fetch("https://portfolio-digital-g7mp.onrender.com/content/mainSection")
+fetch(`${apiUrl}/content/mainSection`)
   .then((response) => {
     if (!response.ok) throw new Error(`Erro na requisição: ${response.status}`);
     return response.json();
@@ -102,7 +137,7 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/mainSection")
   .catch((error) => console.error("Erro ao carregar conteúdo:", error));
 
 // GALERIA
-fetch("https://portfolio-digital-g7mp.onrender.com/content/gallery")
+fetch(`${apiUrl}/content/gallery`)
   .then((response) => response.json())
   .then((data) => {
     const container = document.getElementById("galeria-container");
@@ -117,7 +152,7 @@ fetch("https://portfolio-digital-g7mp.onrender.com/content/gallery")
   .catch((error) => console.error("Erro ao carregar galeria:", error));
 
 // SOBRE MIM
-fetch("https://portfolio-digital-g7mp.onrender.com/content/about")
+fetch(`${apiUrl}/content/about`)
   .then((response) => response.json())
   .then((data) => {
     document.querySelector("#about-title").innerText = data.title;
@@ -159,7 +194,7 @@ function renderPosts() {
     currentPage > 1 ? "inline-block" : "none";
 }
 
-fetch("https://portfolio-digital-g7mp.onrender.com/blog")
+fetch(`${apiUrl}/blog`)
   .then((response) => response.json())
   .then((posts) => {
     allPosts = posts;
@@ -182,7 +217,7 @@ document.getElementById("show-less").addEventListener("click", () => {
 });
 
 // RODAPÉ - REDES SOCIAIS
-fetch("https://portfolio-digital-g7mp.onrender.com/social-links")
+fetch(`${apiUrl}/social-links`)
   .then((response) => response.json())
   .then((links) => {
     const socialList = document.querySelector(".rodape-col-4 ul");

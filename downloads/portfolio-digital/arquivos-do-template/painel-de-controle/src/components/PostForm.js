@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const PostForm = () => {
   const [title, setTitle] = useState("");
@@ -22,13 +23,9 @@ const PostForm = () => {
     }
 
     try {
-      await axios.post(
-        "https://portfolio-digital-g7mp.onrender.com/blog",
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+      await axios.post(`${apiUrl}/blog`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       alert("Post criado com sucesso!");
       setTitle("");
       setContent("");

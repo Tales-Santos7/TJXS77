@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./env.js"></script>
   <title>Detalhes do Post</title>
   <style>
     :root {
@@ -81,7 +82,8 @@
 
 <body>
   <script>
-    fetch("https://portfolio-digital-g7mp.onrender.com/content/theme")
+    const apiUrl = window.API_URL;
+    fetch(`${apiUrl}/content/theme`)
       .then(res => res.json())
       .then(data => {
         if (data.color) {
@@ -98,15 +100,14 @@
     <a href="./index.html" class="btn">🡸 Voltar para a página inicial</a>
   </div>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
+  <script>    const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get("id");
 
     if (!postId) {
       document.getElementById("title").innerText = "ID do post não encontrado.";
       document.getElementById("content").style.display = "none";
     } else {
-      fetch(`https://portfolio-digital-g7mp.onrender.com/blog/${postId}`)
+      fetch(`${apiUrl}/blog/${postId}`)
         .then((res) => {
           if (!res.ok) throw new Error("Post não encontrado");
           return res.json();
@@ -125,7 +126,7 @@
             // Verifica se a URL da imagem já começa com http, senão adiciona o domínio base
             img.src = post.imageUrl.startsWith("http")
               ? post.imageUrl
-              : `https://portfolio-digital-g7mp.onrender.com${post.imageUrl}`;
+              : `${apiUrl}${post.imageUrl}`;
             img.style.display = "block";
           }
         })

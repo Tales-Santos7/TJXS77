@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const MainSectionForm = () => {
   const [title, setTitle] = useState("");
@@ -10,9 +11,7 @@ const MainSectionForm = () => {
     // Carregar dados existentes
     const fetchMainSection = async () => {
       try {
-        const response = await axios.get(
-          "https://portfolio-digital-g7mp.onrender.com/content/mainSection"
-        );
+        const response = await axios.get(`${apiUrl}/content/mainSection`);
         if (response.data) {
           setTitle(response.data.title);
           setDescription(response.data.description);
@@ -30,13 +29,10 @@ const MainSectionForm = () => {
     setLoading(true);
 
     try {
-      await axios.put(
-        "https://portfolio-digital-g7mp.onrender.com/content/mainSection",
-        {
-          title,
-          description,
-        }
-      );
+      await axios.put(`${apiUrl}/content/mainSection`, {
+        title,
+        description,
+      });
       alert("Seção atualizada com sucesso!");
     } catch (error) {
       console.error("Erro ao salvar a seção:", error);

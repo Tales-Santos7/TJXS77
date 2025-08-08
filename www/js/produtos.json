@@ -47,6 +47,10 @@
       {
         "pergunta": "Posso usar em mais de um projeto?",
         "resposta": "Sim, o código é seu."
+      },
+      {
+        "pergunta": "Tem suporte técnico incluso?",
+        "resposta": "Não, mas o código está bem documentado para facilitar sua utilização. Caso deseje suporte, podemos negociar à parte."
       }
     ],
     "notaAutor": "Ideal para criadoras de conteúdo que desejam profissionalizar sua presença online com autonomia."
@@ -89,7 +93,7 @@
     },
     "screenshots": [
       "./www/img/portfolio-digital.png",
-      "./www/img/img_projetos/captura2.jpg"
+      "./www/img/painel-portfolio-digital.png"
     ],
     "faq": [
       {
@@ -99,6 +103,10 @@
       {
         "pergunta": "Posso usar em mais de um projeto?",
         "resposta": "Sim, o código é seu."
+      },
+      {
+        "pergunta": "Tem suporte técnico incluso?",
+        "resposta": "Não, mas o código está bem documentado para facilitar sua utilização. Caso deseje suporte, podemos negociar à parte."
       }
     ],
     "notaAutor": "Ideal para criadoras de conteúdo que desejam profissionalizar sua presença online com autonomia."

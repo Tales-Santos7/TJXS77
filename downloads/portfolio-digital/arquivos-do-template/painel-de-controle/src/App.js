@@ -18,6 +18,7 @@ import ImgHero from "./components/ImgHero";
 import LogoForm from "./components/LogoForm";
 import SiteNameForm from "./components/SiteNameForm";
 import FooterLogoForm from "./components/FooterLogoForm";
+import FaviconForm from "./components/FaviconForm";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -53,6 +54,12 @@ function App() {
       icon: "mdi:format-title",
       label: "Nome do Site",
       component: <SiteNameForm />,
+    },
+    {
+      id: "favicon",
+      icon: "mdi:circle-edit-outline",
+      label: "Favicon",
+      component: <FaviconForm />,
     },
     {
       id: "social-links",

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const AboutForm = () => {
   const [title, setTitle] = useState("");
@@ -8,9 +9,7 @@ const AboutForm = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const response = await axios.get(
-          "https://portfolio-digital-g7mp.onrender.com/content/about"
-        );
+        const response = await axios.get(`${apiUrl}/content/about`);
         setTitle(response.data.title);
         setDescription(response.data.description);
       } catch (error) {
@@ -23,13 +22,10 @@ const AboutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(
-        "https://portfolio-digital-g7mp.onrender.com/content/about",
-        {
-          title,
-          description,
-        }
-      );
+      await axios.put(`${apiUrl}/content/about`, {
+        title,
+        description,
+      });
       alert('Seção "Sobre Mim" atualizada com sucesso!');
     } catch (error) {
       console.error('Erro ao atualizar seção "Sobre Mim":', error);

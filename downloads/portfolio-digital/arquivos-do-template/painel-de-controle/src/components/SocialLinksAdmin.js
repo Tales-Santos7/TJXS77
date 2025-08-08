@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 function SocialLinksAdmin() {
   const [socialLinks, setSocialLinks] = useState([]);
@@ -14,7 +15,7 @@ function SocialLinksAdmin() {
 
   const fetchLinks = () => {
     axios
-      .get("https://portfolio-digital-g7mp.onrender.com/social-links")
+      .get(`${apiUrl}/social-links`)
       .then((response) => setSocialLinks(response.data))
       .catch((error) => {
         setStatusMessage("Erro ao buscar redes sociais.");
@@ -30,17 +31,11 @@ function SocialLinksAdmin() {
           "Tem certeza de que deseja atualizar este link?"
         );
         if (confirmUpdate) {
-          await axios.put(
-            `https://portfolio-digital-g7mp.onrender.com/social-links/${editingId}`,
-            { url }
-          );
+          await axios.put(`${apiUrl}/social-links/${editingId}`, { url });
           setStatusMessage("Link atualizado com sucesso!");
         }
       } else {
-        await axios.post(
-          "https://portfolio-digital-g7mp.onrender.com/social-links",
-          { name, url }
-        );
+        await axios.post("${apiUrl}/social-links", { name, url });
         setStatusMessage("Link criado com sucesso!");
       }
 
@@ -66,9 +61,7 @@ function SocialLinksAdmin() {
     );
     if (confirmDelete) {
       try {
-        await axios.delete(
-          `https://portfolio-digital-g7mp.onrender.com/social-links/${id}`
-        );
+        await axios.delete(`${apiUrl}/social-links/${id}`);
         setStatusMessage("Link excluído com sucesso!");
         fetchLinks();
       } catch (error) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const LogoForm = () => {
   const [title, setTitle] = useState("");
@@ -9,9 +10,7 @@ const LogoForm = () => {
   useEffect(() => {
     const fetchLogo = async () => {
       try {
-        const res = await axios.get(
-          "https://portfolio-digital-g7mp.onrender.com/content/logo"
-        );
+        const res = await axios.get(`${apiUrl}/content/logo`);
         if (res.data) {
           setTitle(res.data.title || "");
           setDescription(res.data.description || "");
@@ -27,13 +26,10 @@ const LogoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(
-        "https://portfolio-digital-g7mp.onrender.com/content/logo",
-        {
-          title,
-          description,
-        }
-      );
+      await axios.put(`${apiUrl}/content/logo`, {
+        title,
+        description,
+      });
       setStatus("Texto da logo atualizado com sucesso!");
     } catch (err) {
       console.error("Erro ao atualizar texto da logo:", err);

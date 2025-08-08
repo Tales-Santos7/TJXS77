@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export default function PostDetails() {
   const { id } = useParams();
@@ -12,9 +13,7 @@ export default function PostDetails() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(
-          `https://portfolio-digital-g7mp.onrender.com/blog/${id}`
-        );
+        const res = await axios.get(`${apiUrl}/blog/${id}`);
         setPost(res.data);
       } catch (error) {
         console.error("Erro ao carregar o post:", error);
