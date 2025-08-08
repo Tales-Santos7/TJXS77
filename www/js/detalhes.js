@@ -77,7 +77,7 @@ fetch("./www/js/produtos.json")
 
     if (produto.funcionalidades && produto.funcionalidades.length > 0) {
       document.getElementById("funcionalidades").innerHTML =
-        produto.funcionalidades.map((item) => `<li>✅ ${item}</li>`).join("");
+        produto.funcionalidades.map((item) => `<li>${item}</li>`).join("");
     }
 
     if (produto.tecnologias && produto.tecnologias.length > 0) {
