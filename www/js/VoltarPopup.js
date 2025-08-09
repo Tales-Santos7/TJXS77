@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
         painel: "https://demo-painel-portfolio-digital.vercel.app/",
         detalhe: `detalhes.html?id=portfolio-digital&from=popup`,
         arquivo: "/downloads/portfolio-digital.zip",
-        preco: 40000,
+        preco: 400,
       },
       
       // outros produtos aqui...
