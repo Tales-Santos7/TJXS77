@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
           '<img title="HTML" src="https://skillicons.dev/icons?i=html" class="icons">',
         painel: "https://demo-painel-pagina-de-links.vercel.app/",
         detalhe: `detalhes.html?id=pagina-links&from=popup`,
-        arquivo: "/downloads/pagina-links.zip",
+        arquivo: "/downloads/linketree.zip",
         preco: 25000,
       },
       "portfolio-digital": {

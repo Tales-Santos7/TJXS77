@@ -1,4 +1,4 @@
-[
+[        
   {
     "id": "pagina-links",
     "titulo": "Página de Links",
@@ -42,7 +42,7 @@
     "faq": [
       {
         "pergunta": "Preciso saber programar?",
-        "resposta": "Não! O painel é feito para leigos."
+        "resposta": "Sim! Para esse produto exclusivamente, sim."
       },
       {
         "pergunta": "Posso usar em mais de um projeto?",
@@ -98,7 +98,7 @@
     "faq": [
       {
         "pergunta": "Preciso saber programar?",
-        "resposta": "Não! O painel é feito para leigos."
+        "resposta": "Sim! Para esse produto exclusivamente, sim."
       },
       {
         "pergunta": "Posso usar em mais de um projeto?",
