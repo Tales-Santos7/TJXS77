@@ -1,0 +1,7 @@
+# Ignorar arquivos específicos
+
+# Ignorar pastas
+vendor/
+platforms/
+node_modules/
+.env

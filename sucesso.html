@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compra Realizada</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body
+  class="bg-gradient-to-br from-green-600 via-teal-500 to-blue-600 text-white min-h-screen flex items-center justify-center">
+
+  <div id="success"
+    class="hidden max-w-md bg-white text-gray-900 rounded-2xl shadow-2xl p-8 text-center animate-fade-in">
+    <div class="text-green-500 mb-4">
+      <i class="fas fa-check-circle text-5xl"></i>
+    </div>
+    <h1 id="titulo" class="text-2xl font-bold mb-4">Obrigado pela sua compra!</h1>
+    <p class="mb-6">O seu pagamento foi confirmado com sucesso.</p>
+
+    <div class="flex flex-col gap-4 items-center">
+      <a id="link-download" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" download>
+        <i class="fas fa-download mr-2"></i>Baixar Template
+      </a>
+      <hr class="font-bold" style="width: 90%; height: 1px; background-color: #504d4d;" />OU
+      <input id="email" type="email" placeholder="Seu email"
+        class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <button onclick="enviarEmail()"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+        <i class="fas fa-paper-plane mr-2"></i>Enviar por Email
+      </button>
+      <p id="email-status" class="text-sm mt-2 text-green-600 hidden sucesso">Email enviado com sucesso!
+        <span style="color: red; font-weight: 700;">VERIFIQUE SUA CAIXA SPAM!</span><br>
+        <span style="color: #555; font-size: 10px;">OBS.: A depender da demanda o email pode demorar de 5 a 30
+          minutos.</span>
+      </p>
+    </div>
+  </div>
+
+  <div id="error" class="hidden max-w-md bg-white text-gray-900 rounded-2xl shadow-2xl p-8 text-center animate-fade-in">
+    <div class="text-red-500 mb-4">
+      <i class="fas fa-times-circle text-5xl"></i>
+    </div>
+    <h1 class="text-xl font-bold mb-2">Link inválido ou acesso negado.</h1>
+    <p>Certifique-se de que usou o link correto enviado após o pagamento.</p>
+  </div>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init('W1eA5RLtZTP2dBrXK');
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    let linkDownload = '';
+    let nomeProduto = '';
+
+    fetch(`https://tales-santos-backend-chb9.onrender.com/validar-token?token=${token}`)
+      .then(res => res.json())
+      .then(produto => {
+        nomeProduto = produto.produto_nome;
+        linkDownload = produto.arquivo;
+        document.getElementById('titulo').innerText = `Obrigado por comprar com a gente, ${produto.cliente_nome}!`;
+        document.getElementById('link-download').href = produto.arquivo;
+        document.getElementById('success').classList.remove('hidden');
+      })
+      .catch(() => {
+        document.getElementById('error').classList.remove('hidden');
+      });
+
+    function enviarEmail() {
+      const email = document.getElementById("email").value;
+      if (!email) return alert("Por favor, introduza um email válido.");
+
+      // Verifica se emailjs está carregado antes de enviar o email
+      if (typeof emailjs === "undefined") {
+        return alert("O serviço de email ainda não foi carregado. Tente novamente em alguns segundos.");
+      }
+
+      emailjs.send("service_sx74paw", "template_cmqq18m", {
+        from_name: "Tales Santos",
+        to_email: email,
+        reply_to: email,
+        produto_nome: nomeProduto,
+        link_download: linkDownload
+      }).then(() => {
+        document.getElementById("email-status").classList.remove("hidden");
+      }, () => {
+        alert("Erro ao enviar o email. Tente novamente.");
+      });
+
+    } window.enviarEmail = enviarEmail; // garante que a função está disponível no onclick
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja | Templates</title>
+  <link rel="icon" href="./www/img/bag-512px.png" type="image/png">
+  <meta name="description"
+    content="Sou Desenvolvedor Web. Transformo ideias em websites únicos, que unem funcionalidade e estética. Com criatividade e atenção aos detalhes, crio experiências digitais que se destacam.">
+  <meta name="keywords"
+    content="desenvolvimento web, web design, criação de sites, portfólio digital, design responsivo, UX/UI design, front-end, programação web, HTML, CSS, JavaScript, SEO, performance web, design criativo, prototipação, experiência do usuário, interface do usuário, landing pages, portfólio online, design moderno, manutenção de sites, desenvolvimento ágil, acessibilidade web, wireframes, design de interação, freelancer web, serviços digitais, aplicativos web, soluções digitais, personalização web, criatividade digital">
+  <meta name="author" content="Tales Santos">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Tales Santos | Portfolio">
+  <meta property="og:description"
+    content="Sou Desenvolvedor Web. Transformo ideias em websites únicos, que unem funcionalidade e estética. Com criatividade e atenção aos detalhes, crio experiências digitais que se destacam.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tales Santos | Portfolio">
+  <meta property="og:image:alt" content="Imagem do Portfolio">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Tales Santos | Portfolio">
+  <meta property="twitter:description"
+    content="Sou Desenvolvedor Web. Transformo ideias em websites únicos, que unem funcionalidade e estética. Com criatividade e atenção aos detalhes, crio experiências digitais que se destacam.">
+  <meta name="robots" content="max-image-preview:large" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="/www/css/loja.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+
+<body>
+  <a href="./index.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a>
+  <div class="container">
+    <h2>Loja de Projetos</h2>
+    <div class="categories">
+      <!-- <div class="category" data-filter="todos">Todos</div> -->
+      <div class="category" data-filter="devs">Sou dev</div>
+      <div class="category" data-filter="nao-devs">Não sou dev</div>
+    </div>
+    <!-- Botão de ajuda fixo -->
+    <button id="toggleAjuda" title="Como funciona?">
+      <i class="fa-solid fa-circle-question"></i>
+    </button>
+
+    <!-- Caixa de ajuda flutuante -->
+    <div id="ajudaBox"
+      class="ajudaBox hidden fixed bottom-24 right-5 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-lg shadow-lg max-w-xs z-50">
+      <h3 class="text-lg font-bold mb-1">Como funciona?</h3>
+      <p class="text-sm leading-relaxed">
+        Para adquirir um produto: escolha e clique em <strong>“Adquirir”</strong>. Você será redirecionado para uma
+        página onde poderá finalizar sua compra. Após confirmar o pedido, clique na opção <strong>“Voltar para o
+          site”</strong>. O download do seu produto será disponibilizado automaticamente.
+      </p>
+    </div>
+
+    <div class="grid">
+      <!-- INICIO CARDS PARA DEVS -->
+      <!-- 1 -->
+      <div
+        onclick="openPopup('Portfólio Digital', './www/img/img_projetos/portfolio-digital.mp4', 'Template para influenciadoras digitais com painel de controle e integração com redes sociais. Ideal para criadoras de conteúdo que precisam de um site profissional sem depender de agência.', 'https://demo-portfolio-digital.vercel.app/', '<img title=&quot;JavaScript&quot; src=&quot;https://skillicons.dev/icons?i=javascript&quot; alt=&quot;JavaScript&quot; class=&quot;icons&quot;>' + '<img title=&quot;NodeJS&quot; src=&quot;https://skillicons.dev/icons?i=nodejs&quot; alt=&quot;NodeJS&quot; class=&quot;icons&quot;>' + '<img title=&quot;MongoDB&quot; src=&quot;https://skillicons.dev/icons?i=mongo&quot; alt=&quot;MongoDB&quot; class=&quot;icons&quot;>' + '<img title=&quot;CSS&quot; src=&quot;https://skillicons.dev/icons?i=css&quot; alt=&quot;CSS&quot; class=&quot;icons&quot;>' + '<img title=&quot;HTML&quot; src=&quot;https://skillicons.dev/icons?i=html&quot; alt=&quot;HTML&quot; class=&quot;icons&quot;>' + '<img title=&quot;Express&quot; src=&quot;https://skillicons.dev/icons?i=express&quot; alt=&quot;Express&quot; class=&quot;icons&quot;>' + '<img title=&quot;ImgBB&quot; src=&quot;https://pipedream.com/s.v0/app_1M0hkk/logo/orig&quot; alt=&quot;ImgBB&quot; class=&quot;icons&quot;>', '', '', '', '', '', '400', 'portfolio-digital', '/downloads/portfolio-digital.zip', '400', 'https://demo-painel-portfolio-digital.vercel.app/', 'detalhes.html?id=portfolio-digital')"
+        class="template-card outros-elementos devs" data-id="pagina">
+        <img src="./www/img/portfolio-digital.png" alt="Portfólio Digital">
+        <h3>Portfólio Digital</h3>
+        <p>Template para influenciadoras digitais com painel de controle e integração com redes sociais. Ideal para
+          criadoras de conteúdo que precisam de um site profissional sem depender de agência.</p>
+        <div class="icons">
+          <img title="JavaScript" src="https://skillicons.dev/icons?i=javascript" alt="JavaScript">
+          <img title="NodeJS" src="https://skillicons.dev/icons?i=nodejs" alt="NodeJS">
+          <img title="MongoDB" src="https://skillicons.dev/icons?i=mongo" alt="MongoDB">
+          <img title="Express" src="https://skillicons.dev/icons?i=express" alt="Express">
+          <img title="ImgBB" src="https://pipedream.com/s.v0/app_1M0hkk/logo/orig" alt="ImgBB">
+          <img title="HTML" src="https://skillicons.dev/icons?i=html" alt="HTML">
+          <img title="CSS" src="https://skillicons.dev/icons?i=css" alt="CSS">
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div
+        onclick="openPopup('Página de links', './www/img/img_projetos/linktree.mp4', 'Template moderno e funcional para criadores de conteúdo que desejam centralizar os seus links de forma profissional. Ideal para influenciadoras digitais, freelancers ou pequenos negócios, este projeto permite criar uma página (link na bio) totalmente personalizável, com design elegante e compatível com dispositivos móveis.', 'https://demo-portfolio-digital.vercel.app/', '<img title=&quot;JavaScript&quot; src=&quot;https://skillicons.dev/icons?i=javascript&quot; alt=&quot;JavaScript&quot; class=&quot;icons&quot;>' + '<img title=&quot;NodeJS&quot; src=&quot;https://skillicons.dev/icons?i=nodejs&quot; alt=&quot;NodeJS&quot; class=&quot;icons&quot;>' + '<img title=&quot;MongoDB&quot; src=&quot;https://skillicons.dev/icons?i=mongo&quot; alt=&quot;MongoDB&quot; class=&quot;icons&quot;>' + '<img title=&quot;CSS&quot; src=&quot;https://skillicons.dev/icons?i=css&quot; alt=&quot;CSS&quot; class=&quot;icons&quot;>' + '<img title=&quot;HTML&quot; src=&quot;https://skillicons.dev/icons?i=html&quot; alt=&quot;HTML&quot; class=&quot;icons&quot;>' + '<img title=&quot;Express&quot; src=&quot;https://skillicons.dev/icons?i=express&quot; alt=&quot;Express&quot; class=&quot;icons&quot;>' + '<img title=&quot;ImgBB&quot; src=&quot;https://pipedream.com/s.v0/app_1M0hkk/logo/orig&quot; alt=&quot;ImgBB&quot; class=&quot;icons&quot;>', '', '', '', '', '', '25000', 'pagina-links', '/downloads/linketree.zip', '25000', 'https://demo-portfolio-digital.vercel.app/', 'detalhes.html?id=pagina-links')"
+        class="template-card outros-elementos devs" data-id="pagina">
+        <img src="./www/img/pagina-links.png" alt="Página de links">
+        <h3>Página de links</h3>
+        <p>Template moderno e funcional para criadores de conteúdo que desejam centralizar os seus links de forma
+          profissional. Ideal para influenciadoras digitais, freelancers ou pequenos negócios, este projeto permite
+          criar uma página "link na bio" totalmente personalizável, com design elegante e compatível com dispositivos
+          móveis.</p>
+        <div class="icons">
+          <img title="JavaScript" src="https://skillicons.dev/icons?i=javascript" alt="JavaScript">
+          <img title="NodeJS" src="https://skillicons.dev/icons?i=nodejs" alt="NodeJS">
+          <img title="MongoDB" src="https://skillicons.dev/icons?i=mongo" alt="MongoDB">
+          <img title="Express" src="https://skillicons.dev/icons?i=express" alt="Express">
+          <img title="ImgBB" src="https://pipedream.com/s.v0/app_1M0hkk/logo/orig" alt="ImgBB">
+          <img title="HTML" src="https://skillicons.dev/icons?i=html" alt="HTML">
+          <img title="CSS" src="https://skillicons.dev/icons?i=css" alt="CSS">
+        </div>
+      </div>
+      <!--FIM CARDS PARA DEVS -->
+
+      <!-- INICIO CARDS PARA NÃO DEVS -->
+      <!-- <div
+        onclick="openPopup('Influencer', './www/img/ok.png', 'Template para influenciadoras digitais com painel de controle e integração com redes sociais. Ideal para criadoras de conteúdo que precisam de um site profissional sem depender de agência.', 'https://tales-santos7.github.io/', '<img title=&quot;JavaScript&quot; src=&quot;https://skillicons.dev/icons?i=javascript&quot; alt=&quot;JavaScript&quot; class=&quot;icons&quot;>' + '<img title=&quot;NodeJS&quot; src=&quot;https://skillicons.dev/icons?i=nodejs&quot; alt=&quot;NodeJS&quot; class=&quot;icons&quot;>' + '<img title=&quot;MongoDB&quot; src=&quot;https://skillicons.dev/icons?i=mongo&quot; alt=&quot;MongoDB&quot; class=&quot;icons&quot;>' + '<img title=&quot;CSS&quot; src=&quot;https://skillicons.dev/icons?i=css&quot; alt=&quot;CSS&quot; class=&quot;icons&quot;>' + '<img title=&quot;HTML&quot; src=&quot;https://skillicons.dev/icons?i=html&quot; alt=&quot;HTML&quot; class=&quot;icons&quot;>', '', '', '', '', '', '4000', 'digital-influencer', '/downloads/digital-influencer.zip', '100', 'https://painel.com')"
+        class="template-card nao-devs outros-elementos">
+        <img src="https://placehold.co/800x600" alt="Gog Dogs">
+        <h3>Gog Dogs</h3>
+        <p>Aplicativo web sobre raças de cães</p>
+        <div class="icons">
+          <img title="JavaScript" src="https://skillicons.dev/icons?i=javascript" alt="JavaScript">
+          <img title="NodeJS" src="https://skillicons.dev/icons?i=nodejs" alt="NodeJS">
+          <img title="MongoDB" src="https://skillicons.dev/icons?i=mongo" alt="MongoDB">
+          <img title="HTML" src="https://skillicons.dev/icons?i=html" alt="HTML">
+          <img title="CSS" src="https://skillicons.dev/icons?i=css" alt="CSS">
+        </div>
+      </div> -->
+
+      <!-- FIM CARDS PARA NÃO DEVS -->
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span onclick="closePopup()" class="popup-close">&times;</span>
+      <!-- Botão de ajuda dentro do popup -->
+      <button id="popupAjudaBtn" title="Como funciona?"
+        class="absolute top-3 right-10 text-yellow-400 hover:text-yellow-500 text-xl">
+        <i class="fa-solid fa-circle-question"></i>
+      </button>
+
+      <!-- Caixa de ajuda no popup -->
+      <div id="popupAjudaBox"
+        class="hidden absolute top-14 right-5 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-lg shadow-lg max-w-sm z-50">
+        <h3 class="text-base font-bold mb-1">Como funciona?</h3>
+        <p class="text-sm leading-relaxed">
+          Clique em <strong>“Adquirir”</strong> e finalize a compra na próxima página. Depois, clique em <strong>“Voltar
+            para o site”</strong> e o download será liberado automaticamente.
+        </p>
+      </div>
+      <h3 id="popupTitle" class="popup-title">Título do Projeto</h3>
+      <video src="" id="popupImage" class="popup-image" alt="Imagem do projeto" controls muted loop></video>
+      <div class="flex items-center justify-between mb-4">
+        <div id="popupIcons" class="popup-icons icons"></div>
+        <div id="price" class="popup-price text-yellow-400 text-lg font-bold"></div>
+      </div>
+      <div>
+        <p class="popup-description" id="popupDescription"></p>
+      </div>
+      <div class="popup-links">
+        <div class="popup-link-row">
+          <a id="popupdetalheLink" href="#" class="popup-link">Mais detalhes</a>
+        </div>
+        <div id="formError" class="form-error" style="display:none;"></div>
+        <div>
+          <input type="text" id="customerNome" placeholder="Digite seu nome" class="popup-input" required maxlength="100">
+        </div>
+        <div>
+          <input type="email" id="customerEmail" placeholder="Digite seu e-mail" class="popup-input" required maxlength="150">
+        </div>
+        <div>
+          <input type="tel" id="customerTelefone" placeholder="Digite seu telefone" class="popup-input" required maxlength="15">
+        </div>
+        <div>
+         <input type="text" id="customerTaxId" placeholder="Digite seu CPF" class="popup-input" required maxlength="11" pattern="\d{11}" title="Digite apenas números">
+        </div>
+
+        <button id="popupBuyLink" class="popup-link border-color" onclick="createInvoice()">Adquirir</button>
+
+      </div>
+    </div>
+  </div>
+  <script src="./www/js/loja.js"></script>
+  <script src="./www/js/VoltarPopup.js"></script>
+</body>
+
+</html>

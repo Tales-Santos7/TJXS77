@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Tales Santos",
+    "version": "1.0",
+    "description": "Acede rapidamente ao teu site.",
+    "action": {
+      "default_popup": "Findex.html"
+    },
+    "icons": {
+      "16": "res/icon-5.png",
+      "48": "res/icon-5.png",
+      "128": "res/icon-5.png"
+    }
+  }
+  

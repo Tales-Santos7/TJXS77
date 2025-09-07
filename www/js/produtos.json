@@ -1,0 +1,114 @@
+[        
+  {
+    "id": "pagina-links",
+    "titulo": "Página de Links",
+    "LinkDemo": "https://demo-pagina-de-links.vercel.app/",
+    "DemoPainel": "https://demo-painel-pagina-de-links.vercel.app/",
+    "descricao": "Template moderno e funcional para criadores de conteúdo que desejam centralizar os seus links de forma profissional. Ideal para influenciadoras digitais, freelancers ou pequenos negócios, este projeto permite criar uma página (link na bio) totalmente personalizável, com design elegante e compatível com dispositivos móveis.",
+    "video": "./www/img/img_projetos/linktree.mp4",
+    "tecnologias": [
+      {
+        "nome": "JavaScript",
+        "icone": "https://skillicons.dev/icons?i=javascript"
+      },
+      { "nome": "NodeJS", "icone": "https://skillicons.dev/icons?i=nodejs" },
+      { "nome": "HTML", "icone": "https://skillicons.dev/icons?i=html" },
+      { "nome": "CSS", "icone": "https://skillicons.dev/icons?i=css" },
+      { "nome": "MongoDB", "icone": "https://skillicons.dev/icons?i=mongo" },
+      { "nome": "Express", "icone": "https://skillicons.dev/icons?i=express" },
+      {
+        "nome": "ImgBB",
+        "icone": "https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
+      }
+    ],
+    "funcionalidades": [
+      "Código fonte completo (frontend + backend + painel de controle)",
+      "Experiência amigável para quem não entende de código",
+      "Arquitetura modular pronta para escalar",
+      "Painel de administração com login",
+      "Adicionar, editar e excluir a foto e os textos",
+      "Criação, edição e exclusão de links",
+      "Design moderno e responsivo"
+    ],
+    "infoTecnica": {
+      "Frontend": "HTML, CSS, JavaScript + NodeJS",
+      "Backend": "NodeJS, Express, ImgBB (Para upload de imagens)",
+      "Banco de dados": "MongoDB"
+    },
+    "screenshots": [
+      "./www/img/img_projetos/linktree.png",
+      "./www/img/img_projetos/painel-linktree.png"
+    ],
+    "faq": [
+      {
+        "pergunta": "Preciso saber programar?",
+        "resposta": "Sim! Para esse produto exclusivamente, sim."
+      },
+      {
+        "pergunta": "Posso usar em mais de um projeto?",
+        "resposta": "Sim, o código é seu."
+      },
+      {
+        "pergunta": "Tem suporte técnico incluso?",
+        "resposta": "Não, mas o código está bem documentado para facilitar sua utilização. Caso deseje suporte, podemos negociar à parte."
+      }
+    ],
+    "notaAutor": "Ideal para criadoras de conteúdo que desejam profissionalizar sua presença online com autonomia."
+  },
+  {
+    "id": "portfolio-digital",
+    "titulo": "Portfólio Digital",
+    "LinkDemo": "https://demo-portfolio-digital.vercel.app/",
+    "DemoPainel": "https://demo-painel-portfolio-digital.vercel.app/",
+    "descricao": "Template para influenciadoras digitais com painel de controle e integração com redes sociais. Ideal para criadoras de conteúdo que precisam de um site profissional sem depender de agência.",
+    "video": "./www/img/img_projetos/portfolio-digital.mp4",
+    "tecnologias": [
+      {
+        "nome": "JavaScript",
+        "icone": "https://skillicons.dev/icons?i=javascript"
+      },
+      { "nome": "NodeJS", "icone": "https://skillicons.dev/icons?i=nodejs" },
+      { "nome": "HTML", "icone": "https://skillicons.dev/icons?i=html" },
+      { "nome": "CSS", "icone": "https://skillicons.dev/icons?i=css" },
+      { "nome": "MongoDB", "icone": "https://skillicons.dev/icons?i=mongo" },
+      { "nome": "Express", "icone": "https://skillicons.dev/icons?i=express" },
+      {
+        "nome": "ImgBB",
+        "icone": "https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
+      }
+    ],
+    "funcionalidades": [
+      "Código fonte completo (frontend + backend + painel de controle)",
+      "Experiência amigável para quem não entende de código",
+      "Arquitetura modular pronta para escalar",
+      "Painel de administração com login",
+      "Adicionar, editar e excluir a fotos, links e textos",
+      "Criação, edição e exclusão de postagens do blog",
+      "Design moderno e responsivo"
+    ],
+    "infoTecnica": {
+      "Frontend": "HTML, CSS, JavaScript + NodeJS",
+      "Backend": "NodeJS, Express, ImgBB (Para upload de imagens)",
+      "Banco de dados": "MongoDB"
+    },
+    "screenshots": [
+      "./www/img/portfolio-digital.png",
+      "./www/img/painel-portfolio-digital.png"
+    ],
+    "faq": [
+      {
+        "pergunta": "Preciso saber programar?",
+        "resposta": "Sim! Para esse produto exclusivamente, sim."
+      },
+      {
+        "pergunta": "Posso usar em mais de um projeto?",
+        "resposta": "Sim, o código é seu."
+      },
+      {
+        "pergunta": "Tem suporte técnico incluso?",
+        "resposta": "Não, mas o código está bem documentado para facilitar sua utilização. Caso deseje suporte, podemos negociar à parte."
+      }
+    ],
+    "notaAutor": "Ideal para criadoras de conteúdo que desejam profissionalizar sua presença online com autonomia."
+  }
+]

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" href="./www/img/bag-512px.png" type="image/png">
+  <meta name="description"
+    content="Sou Desenvolvedor Web. Transformo ideias em websites únicos, que unem funcionalidade e estética. Com criatividade e atenção aos detalhes, crio experiências digitais que se destacam.">
+  <meta name="keywords"
+    content="desenvolvimento web, web design, criação de sites, portfólio digital, design responsivo, UX/UI design, front-end, programação web, HTML, CSS, JavaScript, SEO, performance web, design criativo, prototipação, experiência do usuário, interface do usuário, landing pages, portfólio online, design moderno, manutenção de sites, desenvolvimento ágil, acessibilidade web, wireframes, design de interação, freelancer web, serviços digitais, aplicativos web, soluções digitais, personalização web, criatividade digital">
+  <meta name="author" content="Tales Santos">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Tales Santos | Portfolio">
+  <meta property="og:description"
+    content="Sou Desenvolvedor Web. Transformo ideias em websites únicos, que unem funcionalidade e estética. Com criatividade e atenção aos detalhes, crio experiências digitais que se destacam.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tales Santos | Portfolio">
+  <meta property="og:image:alt" content="Imagem do Portfolio">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Tales Santos | Portfolio">
+  <meta property="twitter:description"
+    content="Sou Desenvolvedor Web. Transformo ideias em websites únicos, que unem funcionalidade e estética. Com criatividade e atenção aos detalhes, crio experiências digitais que se destacam.">
+  <meta name="robots" content="max-image-preview:large" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <title>Mais detalhes</title>
+  <link rel="stylesheet" href="/www/css/loja.css" />
+</head>
+
+<body>
+  <a href="./loja.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a>
+
+  <div class="container">
+    <div class="detalhes-produto">
+      <h2 id="titulo" class="titulo"></h2>
+
+      <div class="video-wrapper" id="video" aria-label="Demonstração em vídeo do projeto"></div>
+
+      <div class="demo-links">
+        <a id="LinkDemo" href="#" target="_blank" class="link-demo">Site demo</a>
+        <a id="DemoPainel" href="#" target="_blank" class="painel-demo">Painel demo</a>
+      </div>
+
+      <p id="descricao" class="descricao"></p>
+
+      <div class="secao">
+        <h3>O que está incluído</h3>
+        <ul id="funcionalidades" class="lista-detalhes"></ul>
+      </div>
+
+      <div class="tecnologias-bloco">
+        <h3>Tecnologias utilizadas</h3>
+        <div id="tecnologias" class="icons tecnologias"></div>
+      </div>
+
+      <div class="secao">
+        <h3>Informações Técnicas</h3>
+        <ul id="info-tecnica" class="lista-detalhes"></ul>
+      </div>
+
+      <div class="secao">
+        <h3>Capturas de Tela</h3>
+        <div id="screenshots" class="galeria"></div>
+      </div>
+
+      <div class="secao">
+        <h3>Perguntas Frequentes</h3>
+        <div id="faq" class="faq-accordion"></div>
+      </div>
+
+      <div class="secao nota-autor">
+        <h3>Nota do autor</h3>
+        <p id="nota-autor"></p>
+      </div>
+
+      <a href="loja.html?popupId=pagina" class="botao-voltar">← Voltar</a>
+    </div>
+
+    <div id="erro" class="mensagem-erro" style="display: none;">
+      <h2>Produto não encontrado 😕</h2>
+      <p>Verifique o link ou volte para a página anterior.</p>
+      <a href="./loja.html" class="botao-voltar">← Voltar</a>
+    </div>
+  </div>
+
+  <script src="/www/js/detalhes.js"></script>
+</body>
+
+</html>

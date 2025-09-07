@@ -1,0 +1,40 @@
+:root{
+    --primary-color: #ffc107;
+    --white: #ffffff;
+    --black: #000000;
+    --dark1: #0d0d17;
+    --dark2: #12121e;
+    --light-bg: #E8F7FC;
+    --ft-gradient: linear-gradient(45deg, #132243, #2f4a85);
+    --fx-white: #ffffff;
+    --fx-dark1: #0d0d17;
+    --background : #132243;
+}
+
+.download-cv {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.download-cv h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.download-btn:before, .download-btn:after {
+    content: "";
+    background-color: var(--background);
+    /* opacity: 0.4; */
+    transition: 0.65s;
+    z-index: -1;
+  }

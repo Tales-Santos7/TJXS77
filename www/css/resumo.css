@@ -1,0 +1,530 @@
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #646cff;
+  --text-color: #213547;
+  --bg-color: #f5f5f5;
+  --accent-color: #ffc107;
+  --sidebar-width: 250px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* 📌 Sidebar Responsiva */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #000;
+  padding: 2rem;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li {
+  position: relative;
+}
+
+.sidebar ul li::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  width: 0%;
+  height: 2px;
+  background-color: #fbff00;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar ul li:hover::after {
+  width: 25px;
+}
+
+.icon-link {
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  position: absolute;
+}
+
+.icon-link-fim {
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  position: absolute;
+  margin-left: 30%;
+}
+
+.icon-link-fim:hover {
+  color: var(--accent-color);
+}
+
+
+.logo {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.logo-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+nav ul li a {
+  color: var(--bg-color);
+  font-size: 1rem;
+  display: block;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent-color);
+}
+
+.active {
+  color: var(--accent-color);
+}
+
+.social-links {
+  margin-top: auto;
+  padding: 1rem 0;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.social-links a {
+  color: var(--bg-color);
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.sidebar-footer {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* 📌 Conteúdo principal */
+.content {
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  width: calc(100% - var(--sidebar-width));
+}
+
+.about {
+  margin-top: 25px;
+}
+
+/* 📌 Botão de Download */
+.pdf-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-align: center;
+}
+
+.pdf-btn:hover {
+  background-color: #fde493;
+}
+
+/* 📌 Seções */
+section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 📌 Timeline */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--secondary-color);
+}
+
+.timeline-item h3 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.timeline-item ul {
+  list-style: none;
+}
+
+.timeline-item li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-item li::before {
+  content: "•";
+  color: var(--secondary-color);
+  position: absolute;
+  left: 0;
+}
+
+/* 📌 Grid de Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.skill {
+  background-color: #f0f0f0;
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 2px solid #e0e0e0;
+}
+
+/* 📌 Rodapé */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #666;
+}
+
+footer i {
+  color: #ff4444;
+}
+
+/* 📌 Responsividade 📌 */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+
+  .logo-img {
+   width: 100px !important;
+   height: 100px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  .sidebar ul li::after {
+   background-color: inherit;
+  }
+
+  .no-none {
+    display: none;
+  }
+
+  nav a:hover {
+    border: 2px solid var(--accent-color);
+   
+  }
+
+  nav a {
+   background-color: var(--text-color);
+   border-radius: 25px;
+   padding: 5px !important;
+  }
+
+  .social-links,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .icon-link {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a:hover {
+    border: 2px solid var(--accent-color);
+   
+  }
+
+  nav a {
+   background-color: inherit;
+   border-radius: 25px;
+   padding: 5px !important;
+  }
+
+  .pdf-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .timeline-item {
+    padding-left: 1rem;
+    border-left-width: 1px;
+  }
+
+  .timeline-item h3 {
+    font-size: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+.js {
+  background-image: linear-gradient(to right, #ffffff 20%, #fff157 80%);
+  background-size: 200% auto;
+  transition: background-position 1s ease-in-out;
+}
+
+.js:hover {
+  background-position: right center;
+  color: #fff;
+}
+
+.react {
+  background-image: linear-gradient(to right, #ffffff 20%, #56d0f5 80%);
+  background-size: 200% auto; 
+  transition: background-position 1s ease-in-out;
+}
+
+.react:hover {
+  background-position: right center;
+  color: #fff;
+}
+
+.f7 {
+  background-image: linear-gradient(to right, #ffffff 20%, #d1450e 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.f7:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.nd {
+  background-image: linear-gradient(to right, #ffffff 20%, #1a9c41 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.nd:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.mongo {
+  background-image: linear-gradient(to right, #ffffff 20%, #0fc546 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.mongo:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.mysql {
+  background-image: linear-gradient(to right, #ffffff 20%, #2d62a7 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.mysql:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.jq {
+  background-image: linear-gradient(to right, #ffffff 20%, #2b7eeb 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.jq:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.html {
+  background-image: linear-gradient(to right, #ffffff 20%, #f7471b 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.html:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.css {
+  background-image: linear-gradient(to right, #ffffff 20%, #3c6ba8 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.css:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.git {
+  background-image: linear-gradient(to right, #ffffff 20%, #a84141 50%, #121212 75%);
+  background-size: 200% auto;
+  transition: background-position 1s ease-in-out; 
+}
+
+.git:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.apiR {
+  background-image: linear-gradient(to right, #ffffff 20%, #aa8135 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.apiR:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.cordova {
+  background-image: linear-gradient(to right, #ffffff 20%, #35424f 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.cordova:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.as {
+  background-image: linear-gradient(to right, #ffffff 20%, #8bbb55 80%);
+  background-size: 200% auto; /* Começa maior para efeito de deslize */
+  transition: background-position 1s ease-in-out; /* Transição suave */
+}
+
+.as:hover {
+  background-position: right center; /* Move o gradiente na transição */
+  color: #fff;
+}
+
+.canva {
+  background-image: linear-gradient(to right, #ffffff 20%, #0080ff 50%, #8e2de2 90%);
+  background-size: 200% auto;
+  transition: background-position 1s ease-in-out; 
+}
+
+.canva:hover {
+  background-position: right center;
+  color: #fff;
+}
