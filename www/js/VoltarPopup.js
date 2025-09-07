@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
           '<img title="HTML" src="https://skillicons.dev/icons?i=html" class="icons">',
         painel: "https://demo-painel-pagina-de-links.vercel.app/",
         detalhe: `detalhes.html?id=pagina-links&from=popup`,
-        arquivo: "/downloads/linketree.zip",
+        arquivo: "/downloads/linketree",
         preco: 25000,
       },
       "portfolio-digital": {
@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
           '<img title="HTML" src="https://skillicons.dev/icons?i=html" class="icons">',
         painel: "https://demo-painel-portfolio-digital.vercel.app/",
         detalhe: `detalhes.html?id=portfolio-digital&from=popup`,
-        arquivo: "/downloads/portfolio-digital.zip",
+        arquivo: "/downloads/portfolio-digital",
         preco: 400,
       },
       
