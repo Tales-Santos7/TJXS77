@@ -127,7 +127,7 @@ nav ul li a.active {
 
 /* Main Content */
 main {
-  padding: 150px 50px 30px 150px;
+  padding: 100px 50px 30px 150px;
   margin-left: var(--sidebar-width);
   width: calc(100% - var(--sidebar-width));
 }
