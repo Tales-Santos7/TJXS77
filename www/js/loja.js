@@ -189,6 +189,39 @@ categories.forEach((category) => {
 // Aplica filtro baseado na categoria salva
 filtrarCards(categoriaSalva);
 
+// =========================== MENU MOBILE NAVBAR ============================
+
+ const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.innerHTML = mobileMenu.classList.contains('hidden')
+      ? '<i class="fa-solid fa-bars"></i>'
+      : '<i class="fa-solid fa-xmark"></i>';
+  });
+
+  // Animação suave de entrada
+  window.addEventListener("load", () => {
+    gsap.from("header", { y: -80, opacity: 0, duration: 0.8, ease: "power3.out" });
+  });
+
+// =========================== FUNÇÃO DE BUSCA ============================
+   const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    cards.forEach(card => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      const desc = card.querySelector("p").textContent.toLowerCase();
+      if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+
 // =========================== ANIMAÇÃO DE ENTRADA ============================
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);

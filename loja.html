@@ -87,41 +87,6 @@
   </div>
 </header>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    menuBtn.innerHTML = mobileMenu.classList.contains('hidden')
-      ? '<i class="fa-solid fa-bars"></i>'
-      : '<i class="fa-solid fa-xmark"></i>';
-  });
-
-  // Animação suave de entrada
-  window.addEventListener("load", () => {
-    gsap.from("header", { y: -80, opacity: 0, duration: 0.8, ease: "power3.out" });
-  });
-
-  // Função de busca
-   const searchInput = document.getElementById("searchInput");
-  const cards = document.querySelectorAll(".template-card");
-
-  searchInput.addEventListener("input", () => {
-    const searchTerm = searchInput.value.toLowerCase();
-    cards.forEach(card => {
-      const title = card.querySelector("h3").textContent.toLowerCase();
-      const desc = card.querySelector("p").textContent.toLowerCase();
-      if (title.includes(searchTerm) || desc.includes(searchTerm)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  });
-</script>
-
-
   <!-- <a href="./index.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a> -->
   <div class="container">
     <!-- <h2>Loja de Projetos</h2> -->
