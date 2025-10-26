@@ -1659,6 +1659,8 @@ section:focus .section-title h5 span {
 
 .about-img img {
   width: 500px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
 }
 
 .about-content p > a {
