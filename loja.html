@@ -33,14 +33,98 @@
 </head>
 
 <body>
-  <a href="./index.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a>
-  <div class="container">
-    <h2>Loja de Projetos</h2>
-    <div class="categories">
-      <!-- <div class="category" data-filter="todos">Todos</div> -->
-      <div class="category" data-filter="devs">Sou dev</div>
-      <div class="category" data-filter="nao-devs">Não sou dev</div>
+  <!-- NAVBAR -->
+<header class="fixed w-full bg-[#111]/90 backdrop-blur-md shadow-md z-50 base-nav">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    
+    <!-- LOGO -->
+    <a href="./index.html" class="text-2xl font-extrabold text-yellow-500 hover:text-yellow-400 transition whitespace-nowrap">
+      TJS<span class="text-white">Store</span>
+    </a>
+
+    <!-- BARRA DE PESQUISA -->
+    <div class="relative hidden md:block w-1/3">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Pesquisar templates..."
+        class="w-full bg-[#1a1a1a] text-black placeholder-gray-400 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+      >
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
     </div>
+
+    <!-- MENU PRINCIPAL -->
+    <nav id="mainNav" class="hidden md:flex gap-8 items-center">
+      <a href="./index.html" class="hover:text-yellow-400 transition">Início</a>
+      <a href="#templates" class="hover:text-yellow-400 transition">Templates</a>
+      <a href="#contato" class="hover:text-yellow-400 transition">Contato</a>
+    </nav>
+
+    <!-- CATEGORIAS -->
+    <div class="hidden md:flex items-center gap-3 categories">
+      <button class="category bg-yellow-500/10 border border-yellow-500 text-yellow-400 px-3 py-1.5 rounded-md text-sm font-medium hover:bg-yellow-500 hover:text-black transition" data-filter="devs">
+        Sou dev
+      </button>
+      <button class="category bg-yellow-500/10 border border-yellow-500 text-yellow-400 px-3 py-1.5 rounded-md text-sm font-medium hover:bg-yellow-500 hover:text-white transition" data-filter="nao-devs">
+        Não sou dev
+      </button>
+    </div>
+
+    <!-- BOTÃO MOBILE -->
+    <button id="menuBtn" class="md:hidden text-yellow-400 text-2xl focus:outline-none">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div id="mobileMenu" class="hidden bg-[#0d0d17] border-t border-yellow-900/40 md:hidden">
+    <div class="flex flex-col items-center py-4 gap-4 text-yellow-400">
+      <a href="./index.html" class="hover:text-yellow-300">Início</a>
+      <a href="#templates" class="hover:text-yellow-300">Templates</a>
+      <a href="#contato" class="hover:text-yellow-300">Contato</a>
+      <hr class="w-2/3 border-yellow-800/30">
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.innerHTML = mobileMenu.classList.contains('hidden')
+      ? '<i class="fa-solid fa-bars"></i>'
+      : '<i class="fa-solid fa-xmark"></i>';
+  });
+
+  // Animação suave de entrada
+  window.addEventListener("load", () => {
+    gsap.from("header", { y: -80, opacity: 0, duration: 0.8, ease: "power3.out" });
+  });
+
+  // Função de busca
+   const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".template-card");
+
+  searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    cards.forEach(card => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      const desc = card.querySelector("p").textContent.toLowerCase();
+      if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
+
+
+  <!-- <a href="./index.html" class="voltar"><i class='fa fa-arrow-left icon'></i></a> -->
+  <div class="container">
+    <!-- <h2>Loja de Projetos</h2> -->
     <!-- Botão de ajuda fixo -->
     <button id="toggleAjuda" title="Como funciona?">
       <i class="fa-solid fa-circle-question"></i>

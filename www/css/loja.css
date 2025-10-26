@@ -13,6 +13,12 @@ body {
   overflow-x: hidden !important;
 }
 
+.base-nav {
+  padding-top: 20px;
+  background-color: #000000b8;
+  padding-bottom: 20px;
+}
+
 .voltar {
   display: flex;
   align-items: center;
@@ -36,6 +42,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2.5rem 1rem;
+  padding-top: 10%;
 }
 
 h2 {
@@ -50,7 +57,6 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 1.25rem;
-  margin-bottom: 2.5rem;
 }
 
 .category {
@@ -60,6 +66,7 @@ h2 {
 
 .category:hover {
   color: var(--cor-princial);
+  color: white !important;
 }
 
 .category.active {
