@@ -59,7 +59,7 @@ function openPopup(
   document.getElementById(
     "price"
   ).innerHTML = `<span class="text-yellow-400 font-bold text-lg ml-auto">R$ ${(
-    amount / 42000
+    amount / 100
   )
     .toFixed(2)
     .replace(".", ",")}</span>`;
