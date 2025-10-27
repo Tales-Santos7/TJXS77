@@ -13,6 +13,19 @@ body {
   overflow-x: hidden !important;
 }
 
+h5 {
+  background-color: var(--cor-princial);
+  position: absolute;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 34.3%;
+  margin-left: 30%;
+  border: rgba(255, 239, 239, 0.542) 0.5px solid;
+  padding: 3px 7px;
+  border-radius: 25px;
+}
+
 .base-nav {
   padding-top: 20px;
   background-color: #000000b8;
@@ -23,8 +36,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   font-size: 22px;
   margin: 1.5rem;
   border: 2px solid var(--cor-princial);
