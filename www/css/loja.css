@@ -15,17 +15,22 @@ body {
 
 h5 {
   background-color: var(--cor-princial);
-  position: absolute;
-  font-size: 15px;
+  width: 23%;
+  position: relative;
+  font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  margin-top: 34.3%;
-  margin-left: 30%;
+  margin-left: 80%;
   border: rgba(255, 239, 239, 0.542) 0.5px solid;
   padding: 3px 7px;
   border-radius: 25px;
 }
 
+@media (max-width: 1281px) {
+  h5 {
+   display: none;
+  }
+}
 .base-nav {
   padding-top: 20px;
   background-color: #000000b8;
@@ -119,6 +124,7 @@ h2 {
 
 .template-card h3 {
   margin-top: 1rem;
+  margin-bottom: 0.4em;
   font-size: 1.25rem;
   font-weight: 600;
 }
