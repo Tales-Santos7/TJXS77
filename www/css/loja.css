@@ -563,3 +563,28 @@ a {
   font-size: 14px;
   margin-bottom: 10px;
 }
+
+@media (max-width: 1150px) {
+ .container {
+    padding-top: 13%;
+  }
+}
+
+@media (max-width: 978px) {
+ .container {
+    padding-top: 16%;
+  }
+}
+
+@media (max-width: 850px) {
+ .container {
+    padding-top: 18%;
+  }
+}
+
+@media (max-width: 450px) {
+ .container {
+    padding-top: 35%;
+  }
+}
+
