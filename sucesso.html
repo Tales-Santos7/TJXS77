@@ -73,7 +73,7 @@
     let linkDownload = '';
     let nomeProduto = '';
 
-    fetch(`https://tales-santos-backend-chb9.onrender.com/validar-token?token=${token}`)
+    fetch(`${BACKEND_URL}/validar-token?token=${token}`)
       .then(res => res.json())
       .then(produto => {
         nomeProduto = produto.produto_nome;

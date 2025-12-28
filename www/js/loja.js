@@ -1,3 +1,5 @@
+const BACKEND_URL = process.env.BACKEND_URL;
+
 // =========================== MENU MOBILE ============================
 document.getElementById("toggleAjuda").addEventListener("click", (e) => {
   e.stopPropagation();
@@ -107,7 +109,7 @@ function createInvoice() {
   buyButton.disabled = true;
   buyButton.innerHTML = 'Processando <span class="loading-spinner"></span>';
 
-  fetch("https://tales-santos-backend-chb9.onrender.com/criar-fatura", {
+  fetch(`${BACKEND_URL}/criar-fatura`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

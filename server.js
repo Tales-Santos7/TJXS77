@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
+const BACKEND_URL = process.env.BACKEND_URL;
+
 const mercadopago = new MercadoPagoConfig({
   accessToken: process.env.MERCADOPAGO_TOKEN,
 });
@@ -88,7 +90,7 @@ app.post("/criar-fatura", async (req, res) => {
         },
         auto_return: "approved",
         notification_url:
-          "https://tales-santos-backend-chb9.onrender.com/webhook-mercadopago",
+          `${BACKEND_URL}/webhook-mercadopago`,
         external_reference: token,
       },
     });
@@ -198,7 +200,7 @@ app.get("/validar-token", (req, res) => {
 
 app.use(
   cors({
-    origin: "https://talessantos-mu.vercel.app/", // Substitua pelo domínio correto do seu frontend
+    origin: "https://talessantos-mu.vercel.app/",
   })
 );
 
@@ -211,6 +213,6 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(
-    `Servidor rodando na porta https://tales-santos-backend-chb9.onrender.com/`
+    `Servidor rodando na porta ${BACKEND_URL}`
   );
 });

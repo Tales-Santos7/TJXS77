@@ -20,7 +20,7 @@
     const params = new URLSearchParams(window.location.search);
     const paymentId = params.get("payment_id");
 
-    fetch(`https://tales-santos-backend-chb9.onrender.com/verificar-pagamento?paymentId=${paymentId}`)
+    fetch(`${BACKEND_URL}/verificar-pagamento?paymentId=${paymentId}`)
       .then(res => res.json())
       .then(data => {
         if (data.status === "approved") {
