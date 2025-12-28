@@ -109,7 +109,7 @@ function createInvoice() {
   buyButton.disabled = true;
   buyButton.innerHTML = 'Processando <span class="loading-spinner"></span>';
 
-  fetch(`${BACKEND_URL}/criar-fatura`, {
+  fetch(`https://tales-santos.onrender.com/criar-fatura`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
