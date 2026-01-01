@@ -50,7 +50,7 @@
 
         async function verificarPagamento() {
             try {
-                const res = await fetch(`https://tales-santos.onrender.com/verificar-pagamento?token=${token}`);
+                const res = await fetch(`https://tales-santos-backend-chb9.onrender.com/verificar-pagamento?token=${token}`);
 
                 if (!res.ok) {
                     setTimeout(verificarPagamento, 5000);
