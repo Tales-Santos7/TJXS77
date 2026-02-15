@@ -1,5 +1,3 @@
-const BACKEND_URL = process.env.BACKEND_URL;
-
 // =========================== MENU MOBILE ============================
 document.getElementById("toggleAjuda").addEventListener("click", (e) => {
   e.stopPropagation();
